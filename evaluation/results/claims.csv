@@ -1,0 +1,7 @@
+case,expected_support,predicted_support,status,scope
+valid,True,True,supported,synthetic_rule_fixture
+wrong_value,False,False,contradicted,synthetic_rule_fixture
+wrong_dataset,False,False,contradicted,synthetic_rule_fixture
+wrong_model,False,False,contradicted,synthetic_rule_fixture
+wrong_metric,False,False,contradicted,synthetic_rule_fixture
+invalid_citation,False,False,insufficient,synthetic_rule_fixture

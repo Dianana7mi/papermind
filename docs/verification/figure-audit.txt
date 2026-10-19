@@ -1,0 +1,46 @@
+
+--- ../evaluation/results\agent-ablation.png ---
+  category: raster  ext: png  size: 103595 B
+  pixels: 2160x1260  dpi: (299.9994, 299.9994)
+  [PASS] 无问题。
+
+--- ../evaluation/results\cost-comparison.png ---
+  category: raster  ext: png  size: 85269 B
+  pixels: 2160x1020  dpi: (299.9994, 299.9994)
+  [PASS] 无问题。
+
+--- ../evaluation/results\latency-comparison.png ---
+  category: raster  ext: png  size: 92158 B
+  pixels: 2160x1080  dpi: (299.9994, 299.9994)
+  [PASS] 无问题。
+
+--- ../evaluation/results\module-ablation.png ---
+  category: raster  ext: png  size: 81014 B
+  pixels: 2160x1140  dpi: (299.9994, 299.9994)
+  [PASS] 无问题。
+
+--- ../evaluation/results\retrieval-comparison.png ---
+  category: raster  ext: png  size: 76959 B
+  pixels: 2160x1080  dpi: (299.9994, 299.9994)
+  [PASS] 无问题。
+
+--- ../evaluation/results\agent-ablation.svg ---
+  category: vector  ext: svg  size: 19901 B
+  [PASS] 无问题。
+
+--- ../evaluation/results\cost-comparison.svg ---
+  category: vector  ext: svg  size: 9456 B
+  [PASS] 无问题。
+
+--- ../evaluation/results\latency-comparison.svg ---
+  category: vector  ext: svg  size: 17058 B
+  [PASS] 无问题。
+
+--- ../evaluation/results\module-ablation.svg ---
+  category: vector  ext: svg  size: 13292 B
+  [PASS] 无问题。
+
+--- ../evaluation/results\retrieval-comparison.svg ---
+  category: vector  ext: svg  size: 16289 B
+  [PASS] 无问题。
+

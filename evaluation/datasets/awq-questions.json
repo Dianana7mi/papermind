@@ -1,0 +1,19 @@
+{
+  "source": "https://arxiv.org/abs/2306.00978",
+  "annotation": "Agent-curated anchor judgments, source checked; NOT human-verified benchmark labels. Relevant means containing the exact anchor; other valid passages may be omitted.",
+  "human_verified_records": 0,
+  "questions": [
+    {"id":"awq-01","query":"Why does AWQ use activation statistics instead of weight magnitude?","anchor":"activation distribution, not weights"},
+    {"id":"awq-02","query":"How are salient weight channels protected without mixed precision?","anchor":"equivalent transformation to scale the salient weight channels"},
+    {"id":"awq-03","query":"Does AWQ require backpropagation or reconstruction?","anchor":"does not rely on any backpropagation or reconstruction"},
+    {"id":"awq-04","query":"What is TinyChat designed for?","anchor":"an efficient and flexible inference framework"},
+    {"id":"awq-05","query":"What does W4A16 quantization mean?","anchor":"4-bit weight, 16-bit activation"},
+    {"id":"awq-06","query":"Why is generation latency memory bandwidth bound on edge GPUs?","anchor":"generation stage is memory bound"},
+    {"id":"awq-07","query":"How is the scaling exponent alpha selected?","anchor":"fast grid search over the interval"},
+    {"id":"awq-08","query":"What is the role of weight clipping in AWQ?","anchor":"weight clipping to minimize the MSE error"},
+    {"id":"awq-09","query":"How does on-the-fly dequantization accelerate inference?","anchor":"on-the-fly dequantization"},
+    {"id":"awq-10","query":"How does AWQ generalize outside the calibration distribution?","anchor":"preventing over-fitting"},
+    {"id":"awq-11","query":"Why does low-bit weight quantization reduce on-device memory footprint?","anchor":"reduce the memory footprint of on-device LLM inference"},
+    {"id":"awq-12","query":"What is the inference bottleneck analyzed for Llama-2-7B on RTX 4090?","anchor":"Bottleneck analysis for Llama-2-7B"}
+  ]
+}

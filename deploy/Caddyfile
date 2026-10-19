@@ -1,0 +1,20 @@
+{$SITE_ADDRESS:localhost} {
+    encode zstd gzip
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy same-origin
+        Strict-Transport-Security "max-age=31536000"
+    }
+    request_body {
+        max_size 31MB
+    }
+    handle /api/* {
+        reverse_proxy api:8000 {
+            flush_interval -1
+            header_up X-Forwarded-For {remote_host}
+        }
+    }
+    handle {
+        reverse_proxy frontend:3000
+    }
+}

@@ -1,0 +1,816 @@
+{
+  "metadata": {
+    "scope": "single real AWQ paper, one query, sequential exploratory run; no human gold quality labels",
+    "question": "Compare the experiments reported for OPT-1.3B and explain how their evaluation conditions limit the comparison.",
+    "library_id": "9e868946-14dd-488f-ace8-ca97dca24365",
+    "model": "deepseek-chat",
+    "embedding": "sentence-transformers/all-MiniLM-L6-v2",
+    "temperature": 0.0,
+    "quality_accuracy": null,
+    "offline_cost": "Shared existing index; see live-smoke ingestion usage",
+    "prices_configured": false
+  },
+  "runs": [
+    {
+      "variant": "Baseline A: dense",
+      "latency_ms": 13678.959200000463,
+      "tool_calls": 1,
+      "model_calls": 1,
+      "input_tokens": 2128,
+      "output_tokens": 990,
+      "cost_usd": null,
+      "experiments": 0,
+      "comparisons": 0,
+      "claims": 0,
+      "citation_validity": null,
+      "quality_accuracy": null,
+      "answer": "UNVERIFIED EVALUATION BASELINE\n\n",
+      "verification": [],
+      "trace": [
+        {
+          "node": "classify",
+          "elapsed_ms": 7.435999999870546,
+          "tool_count": 0
+        },
+        {
+          "node": "retrieve",
+          "elapsed_ms": 10251.637400000618,
+          "tool_count": 1
+        },
+        {
+          "node": "generate",
+          "elapsed_ms": 13678.344900000411,
+          "tool_count": 1
+        },
+        {
+          "node": "verify",
+          "elapsed_ms": 13678.933600000164,
+          "tool_count": 1
+        }
+      ],
+      "errors": [
+        "Answer generation failed: ValueError"
+      ]
+    },
+    {
+      "variant": "Baseline B: hybrid",
+      "latency_ms": 1922.7916999998342,
+      "tool_calls": 1,
+      "model_calls": 1,
+      "input_tokens": 1266,
+      "output_tokens": 442,
+      "cost_usd": null,
+      "experiments": 0,
+      "comparisons": 0,
+      "claims": 5,
+      "citation_validity": 1.0,
+      "quality_accuracy": null,
+      "answer": "UNVERIFIED EVALUATION BASELINE\n\nThe supplied evidence does not contain any experiment results specific to OPT-1.3B; the only OPT model mentioned is OPT-6.7B. [e6a6145e-fcc6-4a57-9542-5b44360efee5]\n\nThe calibration-set robustness experiments reported in Figure 8 were all run with the OPT-6.7B model under INT3-g128 quantization, not OPT-1.3B. [e6a6145e-fcc6-4a57-9542-5b44360efee5]\n\nIn those OPT-6.7B experiments, using the same calibration and evaluation distribution (PubMed-PubMed, Enron-Enron) worked best overall. [e6a6145e-fcc6-4a57-9542-5b44360efee5]\n\nWhen calibration and evaluation distributions differed (PubMed-Enron, Enron-PubMed), AWQ increased perplexity by only 0.5-0.6, whereas GPTQ showed 2.3-4.9 worse perplexity. [e6a6145e-fcc6-4a57-9542-5b44360efee5]\n\nBecause the available evidence covers only OPT-6.7B under a single INT3-g128 setting, no comparison of OPT-1.3B experiments can be supported. [e6a6145e-fcc6-4a57-9542-5b44360efee5]",
+      "verification": [
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "The supplied evidence does not contain any experiment results specific to OPT-1.3B; the only OPT model mentioned is OPT-6.7B.",
+            "evidence_ids": [
+              "e6a6145e-fcc6-4a57-9542-5b44360efee5"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "The calibration-set robustness experiments reported in Figure 8 were all run with the OPT-6.7B model under INT3-g128 quantization, not OPT-1.3B.",
+            "evidence_ids": [
+              "e6a6145e-fcc6-4a57-9542-5b44360efee5"
+            ],
+            "experiment_id": null,
+            "method_name": "AWQ",
+            "model_name": "OPT-6.7B",
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "In those OPT-6.7B experiments, using the same calibration and evaluation distribution (PubMed-PubMed, Enron-Enron) worked best overall.",
+            "evidence_ids": [
+              "e6a6145e-fcc6-4a57-9542-5b44360efee5"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": "OPT-6.7B",
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "When calibration and evaluation distributions differed (PubMed-Enron, Enron-PubMed), AWQ increased perplexity by only 0.5-0.6, whereas GPTQ showed 2.3-4.9 worse perplexity.",
+            "evidence_ids": [
+              "e6a6145e-fcc6-4a57-9542-5b44360efee5"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": "OPT-6.7B",
+            "dataset_name": null,
+            "metric_name": "perplexity",
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "Because the available evidence covers only OPT-6.7B under a single INT3-g128 setting, no comparison of OPT-1.3B experiments can be supported.",
+            "evidence_ids": [
+              "e6a6145e-fcc6-4a57-9542-5b44360efee5"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        }
+      ],
+      "trace": [
+        {
+          "node": "classify",
+          "elapsed_ms": 5.6227999994007405,
+          "tool_count": 0
+        },
+        {
+          "node": "retrieve",
+          "elapsed_ms": 35.999599999740894,
+          "tool_count": 1
+        },
+        {
+          "node": "generate",
+          "elapsed_ms": 1921.4304999995875,
+          "tool_count": 1
+        },
+        {
+          "node": "verify",
+          "elapsed_ms": 1922.696999999971,
+          "tool_count": 1
+        }
+      ],
+      "errors": []
+    },
+    {
+      "variant": "Baseline C: rerank",
+      "latency_ms": 4301.525699999729,
+      "tool_calls": 1,
+      "model_calls": 1,
+      "input_tokens": 1896,
+      "output_tokens": 1200,
+      "cost_usd": null,
+      "experiments": 0,
+      "comparisons": 0,
+      "claims": 10,
+      "citation_validity": 1.0,
+      "quality_accuracy": null,
+      "answer": "UNVERIFIED EVALUATION BASELINE\n\n在 OPT-1.3B 上，FP16 的困惑度为 14.62。 [4884585b-da17-4419-9f3b-f5f6ba7b70fa]\n\n在 OPT-1.3B 上，RTN 量化（3-bit，group size 128）的困惑度为 119.47。 [4884585b-da17-4419-9f3b-f5f6ba7b70fa]\n\n在 OPT-1.3B 上，1% FP16 混合精度的困惑度为 16.91。 [4884585b-da17-4419-9f3b-f5f6ba7b70fa]\n\n在 OPT-1.3B 上，AWQ 的困惑度为 16.32。 [4884585b-da17-4419-9f3b-f5f6ba7b70fa]\n\n在 OPT-1.3B 上，缩放方法 s = 2 的困惑度为 18.63。 [4884585b-da17-4419-9f3b-f5f6ba7b70fa]\n\n表 3 中的量化实验使用 3-bit 量化，group size 为 128。 [4884585b-da17-4419-9f3b-f5f6ba7b70fa]\n\nAWQ 通过基于缩放的方法保护显著权重并降低量化误差，其表现持续优于 RTN，并达到与 1% FP16 混合精度相当的性能，同时更利于硬件实现。 [4884585b-da17-4419-9f3b-f5f6ba7b70fa]\n\n关于校准集数据效率与分布鲁棒性的实验（图 8）是在 OPT-6.7B 模型上、INT3-g128 量化下进行的，而非 OPT-1.3B。 [e6a6145e-fcc6-4a57-9542-5b44360efee5] [b5d68792-380e-4461-9473-24a420b372a6]\n\n分析显著通道缩放（s 取值）的实验是在 OPT-6.7B 模型上进行的，因此这些结果不能直接用于说明 OPT-1.3B 的行为。 [a111c0e9-0159-4d4a-849d-e5cfd1c85d8b]\n\nOPT-1.3B 的对比仅限于表 3 中单一量化设置（3-bit、group size 128）下的困惑度，因此其评估条件范围较窄。 [4884585b-da17-4419-9f3b-f5f6ba7b70fa]",
+      "verification": [
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "在 OPT-1.3B 上，FP16 的困惑度为 14.62。",
+            "evidence_ids": [
+              "4884585b-da17-4419-9f3b-f5f6ba7b70fa"
+            ],
+            "experiment_id": null,
+            "method_name": "FP16",
+            "model_name": "OPT-1.3B",
+            "dataset_name": null,
+            "metric_name": "Perplexity",
+            "metric_value": "14.62",
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "在 OPT-1.3B 上，RTN 量化（3-bit，group size 128）的困惑度为 119.47。",
+            "evidence_ids": [
+              "4884585b-da17-4419-9f3b-f5f6ba7b70fa"
+            ],
+            "experiment_id": null,
+            "method_name": "RTN",
+            "model_name": "OPT-1.3B",
+            "dataset_name": null,
+            "metric_name": "Perplexity",
+            "metric_value": "119.47",
+            "metric_unit": null,
+            "average_bits": "3",
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "在 OPT-1.3B 上，1% FP16 混合精度的困惑度为 16.91。",
+            "evidence_ids": [
+              "4884585b-da17-4419-9f3b-f5f6ba7b70fa"
+            ],
+            "experiment_id": null,
+            "method_name": "1% FP16",
+            "model_name": "OPT-1.3B",
+            "dataset_name": null,
+            "metric_name": "Perplexity",
+            "metric_value": "16.91",
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "在 OPT-1.3B 上，AWQ 的困惑度为 16.32。",
+            "evidence_ids": [
+              "4884585b-da17-4419-9f3b-f5f6ba7b70fa"
+            ],
+            "experiment_id": null,
+            "method_name": "AWQ",
+            "model_name": "OPT-1.3B",
+            "dataset_name": null,
+            "metric_name": "Perplexity",
+            "metric_value": "16.32",
+            "metric_unit": null,
+            "average_bits": "3",
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "在 OPT-1.3B 上，缩放方法 s = 2 的困惑度为 18.63。",
+            "evidence_ids": [
+              "4884585b-da17-4419-9f3b-f5f6ba7b70fa"
+            ],
+            "experiment_id": null,
+            "method_name": "s = 2",
+            "model_name": "OPT-1.3B",
+            "dataset_name": null,
+            "metric_name": "Perplexity",
+            "metric_value": "18.63",
+            "metric_unit": null,
+            "average_bits": "3",
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "表 3 中的量化实验使用 3-bit 量化，group size 为 128。",
+            "evidence_ids": [
+              "4884585b-da17-4419-9f3b-f5f6ba7b70fa"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": "3",
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "AWQ 通过基于缩放的方法保护显著权重并降低量化误差，其表现持续优于 RTN，并达到与 1% FP16 混合精度相当的性能，同时更利于硬件实现。",
+            "evidence_ids": [
+              "4884585b-da17-4419-9f3b-f5f6ba7b70fa"
+            ],
+            "experiment_id": null,
+            "method_name": "AWQ",
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "关于校准集数据效率与分布鲁棒性的实验（图 8）是在 OPT-6.7B 模型上、INT3-g128 量化下进行的，而非 OPT-1.3B。",
+            "evidence_ids": [
+              "e6a6145e-fcc6-4a57-9542-5b44360efee5",
+              "b5d68792-380e-4461-9473-24a420b372a6"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": "OPT-6.7B",
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": "3",
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "分析显著通道缩放（s 取值）的实验是在 OPT-6.7B 模型上进行的，因此这些结果不能直接用于说明 OPT-1.3B 的行为。",
+            "evidence_ids": [
+              "a111c0e9-0159-4d4a-849d-e5cfd1c85d8b"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": "OPT-6.7B",
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "OPT-1.3B 的对比仅限于表 3 中单一量化设置（3-bit、group size 128）下的困惑度，因此其评估条件范围较窄。",
+            "evidence_ids": [
+              "4884585b-da17-4419-9f3b-f5f6ba7b70fa"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": "OPT-1.3B",
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": "3",
+            "semantic": true
+          }
+        }
+      ],
+      "trace": [
+        {
+          "node": "classify",
+          "elapsed_ms": 4.730599999675178,
+          "tool_count": 0
+        },
+        {
+          "node": "retrieve",
+          "elapsed_ms": 224.84739999981684,
+          "tool_count": 1
+        },
+        {
+          "node": "generate",
+          "elapsed_ms": 4301.026000000093,
+          "tool_count": 1
+        },
+        {
+          "node": "verify",
+          "elapsed_ms": 4301.49209999945,
+          "tool_count": 1
+        }
+      ],
+      "errors": []
+    },
+    {
+      "variant": "Baseline D: agentic",
+      "latency_ms": 4031.6609999999855,
+      "tool_calls": 3,
+      "model_calls": 2,
+      "input_tokens": 3296,
+      "output_tokens": 902,
+      "cost_usd": null,
+      "experiments": 0,
+      "comparisons": 0,
+      "claims": 0,
+      "citation_validity": null,
+      "quality_accuracy": null,
+      "answer": "UNVERIFIED EVALUATION BASELINE\n\n",
+      "verification": [],
+      "trace": [
+        {
+          "node": "classify",
+          "elapsed_ms": 4.9968000002991175,
+          "tool_count": 0
+        },
+        {
+          "node": "plan",
+          "elapsed_ms": 682.7062000002115,
+          "tool_count": 0
+        },
+        {
+          "node": "retrieve",
+          "elapsed_ms": 776.4526000000842,
+          "tool_count": 3
+        },
+        {
+          "node": "generate",
+          "elapsed_ms": 4031.0374999999112,
+          "tool_count": 3
+        },
+        {
+          "node": "verify",
+          "elapsed_ms": 4031.636499999877,
+          "tool_count": 3
+        }
+      ],
+      "errors": [
+        "Answer generation failed: ValueError"
+      ]
+    },
+    {
+      "variant": "PaperMind A: structured",
+      "latency_ms": 6547.583800000211,
+      "tool_calls": 4,
+      "model_calls": 2,
+      "input_tokens": 11572,
+      "output_tokens": 1547,
+      "cost_usd": null,
+      "experiments": 6,
+      "comparisons": 0,
+      "claims": 11,
+      "citation_validity": 1.0,
+      "quality_accuracy": null,
+      "answer": "UNVERIFIED EVALUATION BASELINE\n\nTable 1 reports OPT-1.3B WikiText perplexity under INT3 quantization with group size 128, comparing FP16, RTN, and keeping small fractions of weights in FP16 selected by activation, weight, or random criteria. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFor OPT-1.3B, the FP16 baseline achieves a WikiText perplexity of 14.62. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFor OPT-1.3B, RTN (w3-g128) yields a WikiText perplexity of 119.0. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFor OPT-1.3B, keeping 0.1% of weights in FP16 selected by activation gives a WikiText perplexity of 25.03. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFor OPT-1.3B, keeping 1% of weights in FP16 selected by activation gives a WikiText perplexity of 16.91. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFor OPT-1.3B, keeping 3% of weights in FP16 selected by activation gives a WikiText perplexity of 16.68. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFor OPT-1.3B, keeping 0.1% of weights in FP16 selected by weight magnitude gives a WikiText perplexity of 108.71. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nThe paper states that keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves quantized model performance over RTN, and that this is only effective when important weights are selected by activation distribution rather than weight distribution. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nTable 9 reports WikiText-2 perplexity of OPT models under INT2-g64 quantization, comparing FP16, RTN, GPTQ, and AWQ+GPTQ. [19719107-d298-4eb5-983d-3f0707464111] [f2582866-fb7c-4812-8f3b-2484e02ef6d4]\n\nThe OPT-1.3B experiments in Table 1 and Table 9 differ in quantization configuration (INT3-g128 versus INT2-g64) and in the methods compared, so their perplexity values are not directly comparable across tables. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243] [19719107-d298-4eb5-983d-3f0707464111]\n\nThe calibration-set robustness experiments described in the text and Figure 8 use the OPT-6.7B model under INT3-g128 quantization, not OPT-1.3B. [e6a6145e-fcc6-4a57-9542-5b44360efee5] [022dbe89-5c36-4e74-bb60-f4d1a5db660f]",
+      "verification": [
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "Table 1 reports OPT-1.3B WikiText perplexity under INT3 quantization with group size 128, comparing FP16, RTN, and keeping small fractions of weights in FP16 selected by activation, weight, or random criteria.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "For OPT-1.3B, the FP16 baseline achieves a WikiText perplexity of 14.62.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+            ],
+            "experiment_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+            "method_name": "FP16",
+            "model_name": "OPT-1.3B",
+            "dataset_name": "WikiText",
+            "metric_name": "perplexity",
+            "metric_value": "14.62",
+            "metric_unit": "score",
+            "average_bits": null,
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "For OPT-1.3B, RTN (w3-g128) yields a WikiText perplexity of 119.0.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+            ],
+            "experiment_id": "d4e8a18a-4326-4ac9-90a3-0270e3ecacbd",
+            "method_name": "RTN (w3-g128)",
+            "model_name": "OPT-1.3B",
+            "dataset_name": "WikiText",
+            "metric_name": "perplexity",
+            "metric_value": "119.0",
+            "metric_unit": "score",
+            "average_bits": null,
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "For OPT-1.3B, keeping 0.1% of weights in FP16 selected by activation gives a WikiText perplexity of 25.03.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+            ],
+            "experiment_id": "ae48e6bb-247e-403d-8dc1-93eb2d112919",
+            "method_name": "FP16% (based on act.) 0.1%",
+            "model_name": "OPT-1.3B",
+            "dataset_name": "WikiText",
+            "metric_name": "perplexity",
+            "metric_value": "25.03",
+            "metric_unit": "score",
+            "average_bits": null,
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "For OPT-1.3B, keeping 1% of weights in FP16 selected by activation gives a WikiText perplexity of 16.91.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+            ],
+            "experiment_id": "a83ba30d-3586-41b4-b48a-cc3d7ee43f80",
+            "method_name": "FP16% (based on act.) 1%",
+            "model_name": "OPT-1.3B",
+            "dataset_name": "WikiText",
+            "metric_name": "perplexity",
+            "metric_value": "16.91",
+            "metric_unit": "score",
+            "average_bits": null,
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "For OPT-1.3B, keeping 3% of weights in FP16 selected by activation gives a WikiText perplexity of 16.68.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+            ],
+            "experiment_id": "b853d8a8-a247-4c54-93a6-446c87aa6fd7",
+            "method_name": "FP16% (based on act.) 3%",
+            "model_name": "OPT-1.3B",
+            "dataset_name": "WikiText",
+            "metric_name": "perplexity",
+            "metric_value": "16.68",
+            "metric_unit": "score",
+            "average_bits": null,
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "For OPT-1.3B, keeping 0.1% of weights in FP16 selected by weight magnitude gives a WikiText perplexity of 108.71.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+            ],
+            "experiment_id": "65b89b76-edea-4586-903f-98a923cd04c1",
+            "method_name": "FP16% (based on W) 0.1%",
+            "model_name": "OPT-1.3B",
+            "dataset_name": "WikiText",
+            "metric_name": "perplexity",
+            "metric_value": "108.71",
+            "metric_unit": "score",
+            "average_bits": null,
+            "semantic": false
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "The paper states that keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves quantized model performance over RTN, and that this is only effective when important weights are selected by activation distribution rather than weight distribution.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "Table 9 reports WikiText-2 perplexity of OPT models under INT2-g64 quantization, comparing FP16, RTN, GPTQ, and AWQ+GPTQ.",
+            "evidence_ids": [
+              "19719107-d298-4eb5-983d-3f0707464111",
+              "f2582866-fb7c-4812-8f3b-2484e02ef6d4"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "The OPT-1.3B experiments in Table 1 and Table 9 differ in quantization configuration (INT3-g128 versus INT2-g64) and in the methods compared, so their perplexity values are not directly comparable across tables.",
+            "evidence_ids": [
+              "f3f9c4f7-426e-4d42-9cdf-f8505de5a243",
+              "19719107-d298-4eb5-983d-3f0707464111"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        },
+        {
+          "status": "not_run",
+          "claim": {
+            "text": "The calibration-set robustness experiments described in the text and Figure 8 use the OPT-6.7B model under INT3-g128 quantization, not OPT-1.3B.",
+            "evidence_ids": [
+              "e6a6145e-fcc6-4a57-9542-5b44360efee5",
+              "022dbe89-5c36-4e74-bb60-f4d1a5db660f"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          }
+        }
+      ],
+      "trace": [
+        {
+          "node": "classify",
+          "elapsed_ms": 5.28539999959321,
+          "tool_count": 0
+        },
+        {
+          "node": "plan",
+          "elapsed_ms": 1062.1292999994694,
+          "tool_count": 0
+        },
+        {
+          "node": "retrieve",
+          "elapsed_ms": 1168.1344999997236,
+          "tool_count": 3
+        },
+        {
+          "node": "experiments",
+          "elapsed_ms": 1175.6895999997141,
+          "tool_count": 4
+        },
+        {
+          "node": "generate",
+          "elapsed_ms": 6547.127499999988,
+          "tool_count": 4
+        },
+        {
+          "node": "verify",
+          "elapsed_ms": 6547.552699999869,
+          "tool_count": 4
+        }
+      ],
+      "errors": []
+    },
+    {
+      "variant": "PaperMind B: comparison",
+      "latency_ms": 1244.6507999993628,
+      "tool_calls": 5,
+      "model_calls": 1,
+      "input_tokens": 354,
+      "output_tokens": 63,
+      "cost_usd": null,
+      "experiments": 6,
+      "comparisons": 10,
+      "claims": 0,
+      "citation_validity": null,
+      "quality_accuracy": null,
+      "answer": "UNVERIFIED EVALUATION BASELINE\n\n",
+      "verification": [],
+      "trace": [
+        {
+          "node": "classify",
+          "elapsed_ms": 4.565999999613268,
+          "tool_count": 0
+        },
+        {
+          "node": "plan",
+          "elapsed_ms": 903.6406999994142,
+          "tool_count": 0
+        },
+        {
+          "node": "retrieve",
+          "elapsed_ms": 1235.8080999993035,
+          "tool_count": 3
+        },
+        {
+          "node": "experiments",
+          "elapsed_ms": 1239.5837999993091,
+          "tool_count": 4
+        },
+        {
+          "node": "compare",
+          "elapsed_ms": 1241.1999999994805,
+          "tool_count": 5
+        },
+        {
+          "node": "generate",
+          "elapsed_ms": 1243.919300000016,
+          "tool_count": 5
+        },
+        {
+          "node": "verify",
+          "elapsed_ms": 1244.6061999999074,
+          "tool_count": 5
+        }
+      ],
+      "errors": [
+        "Answer generation failed: RuntimeError"
+      ]
+    },
+    {
+      "variant": "PaperMind Full",
+      "latency_ms": 783.1064000001788,
+      "tool_calls": 5,
+      "model_calls": 1,
+      "input_tokens": 354,
+      "output_tokens": 63,
+      "cost_usd": null,
+      "experiments": 6,
+      "comparisons": 10,
+      "claims": 0,
+      "citation_validity": null,
+      "quality_accuracy": null,
+      "answer": "当前证据不足以生成已核验的回答。以下为检索到的原文片段，可打开论文核查：\n\n> 5.2 Evaluation\n\n[b78b306f-a27f-464a-a66d-4e2e70bc149d]\n\n> 5 EXPERIMENTS\n\n[d24dc815-87ae-4607-88b2-ae9968e3467b]\n\n> 5.4 Speedup Evaluation\n\n[936846b1-1ecc-4e84-a42c-37160a264bfc]\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 6 matched conditions, 0 differences, 6 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 6 matched conditions, 0 differences, 6 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 6 matched conditions, 0 differences, 6 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 6 matched conditions, 0 differences, 6 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 6 matched conditions, 0 differences, 6 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol\nComparability does not establish statistical significance or causal superiority.",
+      "verification": [],
+      "trace": [
+        {
+          "node": "classify",
+          "elapsed_ms": 8.600499999374733,
+          "tool_count": 0
+        },
+        {
+          "node": "plan",
+          "elapsed_ms": 670.8450999994966,
+          "tool_count": 0
+        },
+        {
+          "node": "retrieve",
+          "elapsed_ms": 774.3107999995118,
+          "tool_count": 3
+        },
+        {
+          "node": "experiments",
+          "elapsed_ms": 778.1561000001602,
+          "tool_count": 4
+        },
+        {
+          "node": "compare",
+          "elapsed_ms": 779.5437999993737,
+          "tool_count": 5
+        },
+        {
+          "node": "generate",
+          "elapsed_ms": 782.3011999998926,
+          "tool_count": 5
+        },
+        {
+          "node": "verify",
+          "elapsed_ms": 783.0622999999832,
+          "tool_count": 5
+        }
+      ],
+      "errors": [
+        "Answer generation failed: RuntimeError"
+      ]
+    }
+  ]
+}

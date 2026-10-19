@@ -1,0 +1,11 @@
+
+> papermind-web@0.1.0 test:e2e
+> playwright test
+
+
+Running 2 tests using 1 worker
+
+  ok 1 tests\live-evidence.spec.ts:3:5 › real ingested AWQ experiment comparison and PDF citation (1.9s)
+  ok 2 tests\workspace.spec.ts:3:5 › real API: registration, library, every core screen, mobile and signout (1.5s)
+
+  2 passed (4.5s)

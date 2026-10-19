@@ -1,0 +1,3570 @@
+{
+  "conversation_id": "74d88540-d8bf-4b87-a2da-405e00dadbd7",
+  "message_id": "d28bee27-1625-4a4c-8834-b2247a89d565",
+  "answer": "The library's experiments include WikiText perplexity measurements for OPT-1.3B and OPT-6.7B under INT3 quantization with group size 128, comparing FP16, round-to-nearest (RTN), and keeping a small fraction of weights in FP16. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16 — OPT-1.3B / WikiText: 14.62 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nRTN (w3-g128) — OPT-1.3B / WikiText: 119.0 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 0.1% — OPT-1.3B / WikiText: 25.03 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 1% — OPT-1.3B / WikiText: 16.91 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 3% — OPT-1.3B / WikiText: 16.68 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on W) 0.1% — OPT-1.3B / WikiText: 108.71 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nRTN (w3-g128) — OPT-6.7B / WikiText: 23.54 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 0.1% — OPT-6.7B / WikiText: 11.58 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 1% — OPT-6.7B / WikiText: 11.39 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 3% — OPT-6.7B / WikiText: 11.36 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on W) 0.1% — OPT-6.7B / WikiText: 23.41 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type\nComparability does not establish statistical significance or causal superiority.\n\nNOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nNOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nNOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nNOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nNOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions.\nUnknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme\nComparability does not establish statistical significance or causal superiority.",
+  "citations": [
+    {
+      "id": "f3f9c4f7-426e-4d42-9cdf-f8505de5a243",
+      "paper_id": "3060a06e-3336-4bce-824e-4ee283e6b4ab",
+      "page": 4,
+      "text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+      "url": "/api/v1/papers/3060a06e-3336-4bce-824e-4ee283e6b4ab/file"
+    }
+  ],
+  "verification": [
+    {
+      "claim": {
+        "text": "The library's experiments include WikiText perplexity measurements for OPT-1.3B and OPT-6.7B under INT3 quantization with group size 128, comparing FP16, round-to-nearest (RTN), and keeping a small fraction of weights in FP16.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": null,
+        "method_name": null,
+        "model_name": null,
+        "dataset_name": null,
+        "metric_name": null,
+        "metric_value": null,
+        "metric_unit": null,
+        "average_bits": null,
+        "semantic": true
+      },
+      "status": "supported",
+      "reasons": [
+        "The cited Table 1 caption states experiments used INT3 quantization with group size 128 and measured WikiText perplexity, and the table includes rows for OPT-1.3B and OPT-6.7B with columns for FP16, RTN (w3-g128), and FP16% (keeping a small fraction of weights in FP16). All entities, numbers, units, and conditions in the claim align with the source."
+      ],
+      "method": "llm_judge_uncertain"
+    },
+    {
+      "claim": {
+        "text": "For OPT-1.3B on WikiText, the FP16 baseline perplexity is 14.62.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+        "method_name": "FP16",
+        "model_name": "OPT-1.3B",
+        "dataset_name": "WikiText",
+        "metric_name": "perplexity",
+        "metric_value": "14.62",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-1.3B on WikiText, RTN (w3-g128) quantization yields a perplexity of 119.0.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "d4e8a18a-4326-4ac9-90a3-0270e3ecacbd",
+        "method_name": "RTN (w3-g128)",
+        "model_name": "OPT-1.3B",
+        "dataset_name": "WikiText",
+        "metric_name": "perplexity",
+        "metric_value": "119.0",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-1.3B on WikiText, keeping 0.1% of weights in FP16 selected by activation distribution gives a perplexity of 25.03.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "ae48e6bb-247e-403d-8dc1-93eb2d112919",
+        "method_name": "FP16% (based on act.) 0.1%",
+        "model_name": "OPT-1.3B",
+        "dataset_name": "WikiText",
+        "metric_name": "perplexity",
+        "metric_value": "25.03",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-1.3B on WikiText, keeping 1% of weights in FP16 selected by activation distribution gives a perplexity of 16.91.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "a83ba30d-3586-41b4-b48a-cc3d7ee43f80",
+        "method_name": "FP16% (based on act.) 1%",
+        "model_name": "OPT-1.3B",
+        "dataset_name": "WikiText",
+        "metric_name": "perplexity",
+        "metric_value": "16.91",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-1.3B on WikiText, keeping 3% of weights in FP16 selected by activation distribution gives a perplexity of 16.68.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "b853d8a8-a247-4c54-93a6-446c87aa6fd7",
+        "method_name": "FP16% (based on act.) 3%",
+        "model_name": "OPT-1.3B",
+        "dataset_name": "WikiText",
+        "metric_name": "perplexity",
+        "metric_value": "16.68",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-1.3B on WikiText, keeping 0.1% of weights in FP16 selected by weight distribution gives a perplexity of 108.71.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "65b89b76-edea-4586-903f-98a923cd04c1",
+        "method_name": "FP16% (based on W) 0.1%",
+        "model_name": "OPT-1.3B",
+        "dataset_name": "WikiText",
+        "metric_name": "perplexity",
+        "metric_value": "108.71",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-6.7B on WikiText, RTN (w3-g128) quantization yields a perplexity of 23.54.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "d7708e1f-1233-4cc8-80f4-93c36c598346",
+        "method_name": "RTN (w3-g128)",
+        "model_name": "OPT-6.7B",
+        "dataset_name": "WikiText",
+        "metric_name": "Perplexity",
+        "metric_value": "23.54",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-6.7B on WikiText, keeping 0.1% of weights in FP16 selected by activation distribution gives a perplexity of 11.58.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "3e639c90-0fe1-4af6-b07f-b340fa7d14e3",
+        "method_name": "FP16% (based on act.) 0.1%",
+        "model_name": "OPT-6.7B",
+        "dataset_name": "WikiText",
+        "metric_name": "Perplexity",
+        "metric_value": "11.58",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-6.7B on WikiText, keeping 1% of weights in FP16 selected by activation distribution gives a perplexity of 11.39.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "9d368842-f52d-4cb4-9632-7e6f0d14e7a5",
+        "method_name": "FP16% (based on act.) 1%",
+        "model_name": "OPT-6.7B",
+        "dataset_name": "WikiText",
+        "metric_name": "Perplexity",
+        "metric_value": "11.39",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-6.7B on WikiText, keeping 3% of weights in FP16 selected by activation distribution gives a perplexity of 11.36.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "722a444d-1e08-4e3e-8be1-63fb6287d432",
+        "method_name": "FP16% (based on act.) 3%",
+        "model_name": "OPT-6.7B",
+        "dataset_name": "WikiText",
+        "metric_name": "Perplexity",
+        "metric_value": "11.36",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    },
+    {
+      "claim": {
+        "text": "For OPT-6.7B on WikiText, keeping 0.1% of weights in FP16 selected by weight distribution gives a perplexity of 23.41.",
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "experiment_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "method_name": "FP16% (based on W) 0.1%",
+        "model_name": "OPT-6.7B",
+        "dataset_name": "WikiText",
+        "metric_name": "Perplexity",
+        "metric_value": "23.41",
+        "metric_unit": "score",
+        "average_bits": null,
+        "semantic": false
+      },
+      "status": "supported",
+      "reasons": [
+        "Structured fields, unit and source cell match"
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "d4e8a18a-4326-4ac9-90a3-0270e3ecacbd",
+      "status": "INSUFFICIENT_INFORMATION",
+      "domain": "quantization",
+      "matched": [
+        "model_name",
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "precision_type"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-1.3B",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "INSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "ae48e6bb-247e-403d-8dc1-93eb2d112919",
+      "status": "INSUFFICIENT_INFORMATION",
+      "domain": "quantization",
+      "matched": [
+        "model_name",
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "precision_type"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-1.3B",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "INSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "a83ba30d-3586-41b4-b48a-cc3d7ee43f80",
+      "status": "INSUFFICIENT_INFORMATION",
+      "domain": "quantization",
+      "matched": [
+        "model_name",
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "precision_type"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-1.3B",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "INSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "b853d8a8-a247-4c54-93a6-446c87aa6fd7",
+      "status": "INSUFFICIENT_INFORMATION",
+      "domain": "quantization",
+      "matched": [
+        "model_name",
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "precision_type"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-1.3B",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "INSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "65b89b76-edea-4586-903f-98a923cd04c1",
+      "status": "INSUFFICIENT_INFORMATION",
+      "domain": "quantization",
+      "matched": [
+        "model_name",
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "precision_type"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-1.3B",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, precision_type",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "INSUFFICIENT_INFORMATION: 5 matched conditions, 0 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "d7708e1f-1233-4cc8-80f4-93c36c598346",
+      "status": "NOT_COMPARABLE",
+      "domain": "quantization",
+      "matched": [
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [
+        "model_name",
+        "precision_type"
+      ],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "quantization_scheme"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-6.7B",
+          "status": "mismatched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "Perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": "INT3",
+          "status": "mismatched",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": "group size 128",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "NOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "3e639c90-0fe1-4af6-b07f-b340fa7d14e3",
+      "status": "NOT_COMPARABLE",
+      "domain": "quantization",
+      "matched": [
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [
+        "model_name",
+        "precision_type"
+      ],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "quantization_scheme"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-6.7B",
+          "status": "mismatched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "Perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": "INT3",
+          "status": "mismatched",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": "group size 128",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "NOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "9d368842-f52d-4cb4-9632-7e6f0d14e7a5",
+      "status": "NOT_COMPARABLE",
+      "domain": "quantization",
+      "matched": [
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [
+        "model_name",
+        "precision_type"
+      ],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "quantization_scheme"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-6.7B",
+          "status": "mismatched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "Perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": "INT3",
+          "status": "mismatched",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": "group size 128",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "NOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "722a444d-1e08-4e3e-8be1-63fb6287d432",
+      "status": "NOT_COMPARABLE",
+      "domain": "quantization",
+      "matched": [
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [
+        "model_name",
+        "precision_type"
+      ],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "quantization_scheme"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-6.7B",
+          "status": "mismatched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "Perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": "INT3",
+          "status": "mismatched",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": "group size 128",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "NOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions."
+    },
+    {
+      "left_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+      "right_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+      "status": "NOT_COMPARABLE",
+      "domain": "quantization",
+      "matched": [
+        "dataset_name",
+        "metric_name",
+        "metric_unit",
+        "metric_direction"
+      ],
+      "mismatched": [
+        "model_name",
+        "precision_type"
+      ],
+      "missing": [
+        "model_version",
+        "dataset_split",
+        "metric_definition",
+        "average_bits",
+        "quantized_components",
+        "evaluation_protocol",
+        "bit_width",
+        "quantization_scheme"
+      ],
+      "conditions": [
+        {
+          "field": "model_name",
+          "left": "OPT-1.3B",
+          "right": "OPT-6.7B",
+          "status": "mismatched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_name",
+          "left": "WikiText",
+          "right": "WikiText",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_split",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_name",
+          "left": "perplexity",
+          "right": "Perplexity",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_definition",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_unit",
+          "left": "score",
+          "right": "score",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "average_bits",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantized_components",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "evaluation_protocol",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "model_checkpoint",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "dataset_version",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "metric_direction",
+          "left": "lower",
+          "right": "lower",
+          "status": "matched",
+          "severity": "hard",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "bit_width",
+          "left": null,
+          "right": "3",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "precision_type",
+          "left": "FP16",
+          "right": "INT3",
+          "status": "mismatched",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "quantization_scheme",
+          "left": null,
+          "right": "group size 128",
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_method",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "calibration_samples",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "seed_count",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "reported_variance",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "inference_settings",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        },
+        {
+          "field": "hardware",
+          "left": null,
+          "right": null,
+          "status": "missing",
+          "severity": "soft",
+          "left_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "right_evidence": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ]
+        }
+      ],
+      "warnings": [
+        "Unknown conditions are not assumed equal: model_version, dataset_split, metric_definition, average_bits, quantized_components, evaluation_protocol, bit_width, quantization_scheme",
+        "Comparability does not establish statistical significance or causal superiority."
+      ],
+      "evidence_ids": [
+        "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+      ],
+      "explanation": "NOT_COMPARABLE: 4 matched conditions, 2 differences, 8 unresolved conditions."
+    }
+  ],
+  "trace": [
+    {
+      "node": "classify",
+      "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+      "elapsed_ms": 17.491700000391575,
+      "tool_count": 0
+    },
+    {
+      "node": "plan",
+      "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+      "elapsed_ms": 1437.7578999992693,
+      "tool_count": 0
+    },
+    {
+      "node": "retrieve",
+      "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+      "elapsed_ms": 23335.246200000256,
+      "tool_count": 3
+    },
+    {
+      "node": "experiments",
+      "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+      "elapsed_ms": 23348.105299999588,
+      "tool_count": 4
+    },
+    {
+      "node": "compare",
+      "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+      "elapsed_ms": 23350.706999999602,
+      "tool_count": 5
+    },
+    {
+      "node": "generate",
+      "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+      "elapsed_ms": 32769.59689999967,
+      "tool_count": 5
+    },
+    {
+      "node": "verify",
+      "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+      "elapsed_ms": 33804.66379999962,
+      "tool_count": 5
+    }
+  ],
+  "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+  "usage": {
+    "input_tokens": 12060,
+    "output_tokens": 3021,
+    "estimated_cost_usd": null,
+    "cost_source": "unavailable",
+    "calls": [
+      {
+        "schema": "Plan",
+        "latency_ms": 1158.2321999994747,
+        "input_tokens": 344,
+        "output_tokens": 42,
+        "model": "deepseek-chat",
+        "schema_repair": false,
+        "retry_count": null,
+        "retry_limit": 2
+      },
+      {
+        "schema": "AnswerDraft",
+        "latency_ms": 9411.929599998984,
+        "input_tokens": 8807,
+        "output_tokens": 2878,
+        "model": "deepseek-chat",
+        "schema_repair": false,
+        "retry_count": null,
+        "retry_limit": 2
+      },
+      {
+        "schema": "SemanticVerdict",
+        "latency_ms": 1032.1022999996785,
+        "input_tokens": 2909,
+        "output_tokens": 101,
+        "model": "deepseek-chat",
+        "schema_repair": false,
+        "retry_count": null,
+        "retry_limit": 2
+      }
+    ],
+    "trace_id": "7ab587406ec8440dbffc6f96d5bcce99",
+    "token_accounting_complete": true
+  },
+  "latency_ms": 33804.707499999495,
+  "errors": [],
+  "task_type": "comparison",
+  "tool_count": 5
+}

@@ -1,0 +1,97 @@
+name: papermind
+x-backend: &backend
+  build: ./backend
+  env_file: ${PM_ENV_FILE:-.env}
+  volumes:
+    - paper_files:/app/data
+    - model_cache:/home/app/.cache
+  restart: unless-stopped
+  init: true
+  security_opt: [no-new-privileges:true]
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-papermind}
+      POSTGRES_USER: ${POSTGRES_USER:-papermind}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes: [pg_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      retries: 15
+    restart: unless-stopped
+  redis:
+    image: redis:7.4-alpine
+    command: [redis-server, --appendonly, 'yes']
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      retries: 10
+    restart: unless-stopped
+  qdrant:
+    image: qdrant/qdrant:v1.19.1
+    volumes: [qdrant_data:/qdrant/storage]
+    restart: unless-stopped
+  migrate:
+    <<: *backend
+    restart: 'no'
+    command: [alembic, upgrade, head]
+    depends_on:
+      postgres: {condition: service_healthy}
+  api:
+    <<: *backend
+    command: [uvicorn, app.main:app, --host, 0.0.0.0, --port, '8000', --proxy-headers, --forwarded-allow-ips, '*']
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      redis: {condition: service_healthy}
+      qdrant: {condition: service_started}
+    healthcheck:
+      test: [CMD, curl, -f, http://localhost:8000/health/ready]
+      interval: 20s
+      timeout: 5s
+      start_period: 30s
+      retries: 5
+  worker:
+    <<: *backend
+    command: [celery, -A, app.tasks:celery, worker, --loglevel=INFO, --concurrency=1]
+    depends_on:
+      api: {condition: service_healthy}
+    healthcheck:
+      test: [CMD-SHELL, 'celery -A app.tasks:celery inspect ping --destination celery@$$HOSTNAME --timeout 5']
+      interval: 45s
+      timeout: 10s
+      start_period: 90s
+      retries: 3
+  scheduler:
+    <<: *backend
+    command: [celery, -A, app.tasks:celery, beat, --loglevel=INFO, --schedule=/app/data/celerybeat-schedule]
+    depends_on:
+      api: {condition: service_healthy}
+  frontend:
+    build: ./frontend
+    environment: {BACKEND_URL: 'http://api:8000'}
+    depends_on:
+      api: {condition: service_healthy}
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3000').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+  caddy:
+    image: caddy:2-alpine
+    ports: ['80:80', '443:443']
+    environment: {SITE_ADDRESS: '${SITE_ADDRESS:-localhost}'}
+    volumes: ['./deploy/Caddyfile:/etc/caddy/Caddyfile:ro', 'caddy_data:/data', 'caddy_config:/config']
+    depends_on: [frontend, api]
+    restart: unless-stopped
+volumes:
+  pg_data:
+  redis_data:
+  qdrant_data:
+  paper_files:
+  model_cache:
+  caddy_data:
+  caddy_config:

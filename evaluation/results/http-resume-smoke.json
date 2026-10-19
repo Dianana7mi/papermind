@@ -1,0 +1,33 @@
+{
+  "job": {
+    "id": "a15dc476-5de1-4510-a966-3a02eec468bb",
+    "status": "completed",
+    "stage": "extraction_done",
+    "details": {
+      "kind": "extraction",
+      "offset": 0,
+      "limit": 1,
+      "total_batches": 87,
+      "next_batch": 1,
+      "failed_batches": [],
+      "warnings": [],
+      "attempted_batches": [],
+      "remaining_batches": 86,
+      "added_records": 0,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "estimated_cost_usd": null,
+        "cost_source": "unavailable",
+        "calls": [],
+        "trace_id": "f9cc36cab2a34b8e91539bcf62417ee9",
+        "token_accounting_complete": true
+      }
+    }
+  },
+  "before": 24,
+  "after": 24,
+  "same_ids": true,
+  "source": "ingestion-resume-smoke.json",
+  "mode": "real running HTTP server; known cells skip extra LLM calls"
+}

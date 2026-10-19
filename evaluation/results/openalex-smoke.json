@@ -1,0 +1,45 @@
+{
+  "search_items": 10,
+  "first_result": {
+    "id": "https://openalex.org/W4406650295",
+    "title": "AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration",
+    "doi": "https://doi.org/10.1145/3714983.3714987",
+    "year": 2025,
+    "authors": [
+      "Ji Lin",
+      "Jiaming Tang",
+      "Haotian Tang",
+      "Shang Wen Yang",
+      "Guangxuan Xiao",
+      "Song Han"
+    ],
+    "landing_page": "https://doi.org/10.1145/3714983.3714987",
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "any_repository_has_fulltext": false
+    },
+    "content_scope": "metadata_only",
+    "indexed": false
+  },
+  "fetched_work": {
+    "external_id": "https://openalex.org/W4406650295",
+    "title": "AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration",
+    "doi": "https://doi.org/10.1145/3714983.3714987",
+    "year": 2025,
+    "authors": [
+      "Ji Lin",
+      "Jiaming Tang",
+      "Haotian Tang",
+      "Shang Wen Yang",
+      "Guangxuan Xiao",
+      "Song Han"
+    ],
+    "landing_page": "https://doi.org/10.1145/3714983.3714987",
+    "content_scope": "metadata_only",
+    "indexed": false
+  },
+  "content_scope": "metadata_only",
+  "pdf_downloaded": false
+}

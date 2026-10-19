@@ -1,0 +1,1876 @@
+{
+  "source": "https://arxiv.org/abs/2306.00978",
+  "dataset_scope": "one real public AWQ paper; agent-curated smoke, no human labels",
+  "model": "deepseek-chat",
+  "parser": "docling",
+  "steps": {
+    "upload_ingestion": {
+      "status": "ready",
+      "error": null,
+      "jobs": [
+        {
+          "id": "fbe9049f-f0cb-4974-bdb2-c7ebda1262c2",
+          "status": "completed",
+          "stage": "done",
+          "details": {
+            "evidence_count": 194,
+            "experiment_count": 18,
+            "extraction_warnings": [
+              {
+                "error": "Per-upload extraction budget reached",
+                "remaining_sources": 84
+              }
+            ],
+            "usage": {
+              "input_tokens": 12984,
+              "output_tokens": 8028,
+              "estimated_cost_usd": null,
+              "cost_source": "unavailable",
+              "calls": [
+                {
+                  "schema": "ExtractionBatch",
+                  "latency_ms": 7066.409699999895,
+                  "input_tokens": 4143,
+                  "output_tokens": 2341,
+                  "model": "deepseek-chat"
+                },
+                {
+                  "schema": "ExtractionBatch",
+                  "latency_ms": 7767.970200000036,
+                  "input_tokens": 4698,
+                  "output_tokens": 2709,
+                  "model": "deepseek-chat"
+                },
+                {
+                  "schema": "ExtractionBatch",
+                  "latency_ms": 8448.619599999802,
+                  "input_tokens": 4143,
+                  "output_tokens": 2978,
+                  "model": "deepseek-chat"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "dense": {
+      "count": 5,
+      "timing": {
+        "total_ms": 18.945799999983137,
+        "dense_ms": 15.61649999985093,
+        "rerank_ms": 0.0
+      },
+      "ids": [
+        "c411da9a-78d5-410f-980b-3bdcd7dca2ab",
+        "1c6e7906-ff2c-4c18-a263-6c71b4d03f29",
+        "03fb0bef-b369-46db-9b41-1f585f03980b",
+        "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+        "3460c89d-994c-450b-82e9-c0489feb4cba"
+      ]
+    },
+    "bm25": {
+      "count": 5,
+      "timing": {
+        "total_ms": 10.4644000002736,
+        "dense_ms": 0.0,
+        "rerank_ms": 0.0
+      },
+      "ids": [
+        "c411da9a-78d5-410f-980b-3bdcd7dca2ab",
+        "03fb0bef-b369-46db-9b41-1f585f03980b",
+        "c01183c9-af91-4289-9ce8-5d5074d7c8e3",
+        "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+        "6c15d249-b872-4de5-acee-8d24f4a6b359"
+      ]
+    },
+    "hybrid": {
+      "count": 5,
+      "timing": {
+        "total_ms": 25.7144000001972,
+        "dense_ms": 17.3954999995658,
+        "rerank_ms": 0.0
+      },
+      "ids": [
+        "c411da9a-78d5-410f-980b-3bdcd7dca2ab",
+        "03fb0bef-b369-46db-9b41-1f585f03980b",
+        "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+        "01779ee8-9ee2-46c8-b275-5a02f06616b3",
+        "3460c89d-994c-450b-82e9-c0489feb4cba"
+      ]
+    },
+    "rerank": {
+      "count": 5,
+      "timing": {
+        "total_ms": 291.160800000398,
+        "dense_ms": 24.64929999996457,
+        "rerank_ms": 258.58530000004976
+      },
+      "ids": [
+        "c411da9a-78d5-410f-980b-3bdcd7dca2ab",
+        "03fb0bef-b369-46db-9b41-1f585f03980b",
+        "6c15d249-b872-4de5-acee-8d24f4a6b359",
+        "c01183c9-af91-4289-9ce8-5d5074d7c8e3",
+        "847ec81e-3b57-4ab3-99ac-a9aafb913e18"
+      ]
+    },
+    "real_model_rag": {
+      "conversation_id": "56366c7d-7a20-4f17-a515-69749e2b725e",
+      "message_id": "2d6dd662-78e0-443d-bc0d-51495b99028d",
+      "answer": "AWQ 是一种面向大语言模型（LLM）的硬件友好型低位仅权重量化方法。 [847ec81e-3b57-4ab3-99ac-a9aafb913e18] [01779ee8-9ee2-46c8-b275-5a02f06616b3]\n\nAWQ 的核心观察是：LLM 中的权重并非同等重要，只有很小一部分（0.1%–1%）显著权重对性能影响较大。 [847ec81e-3b57-4ab3-99ac-a9aafb913e18] [01779ee8-9ee2-46c8-b275-5a02f06616b3]\n\nAWQ 认为识别显著权重通道应参考激活分布而非权重分布：对应激活幅度较大的权重通道更显著，因为它们处理更重要的特征。 [847ec81e-3b57-4ab3-99ac-a9aafb913e18] [01779ee8-9ee2-46c8-b275-5a02f06616b3]\n\n为避免硬件效率低下的混合精度实现，AWQ 通过分析权重量化误差推导出：放大显著通道可以降低其相对量化误差。 [847ec81e-3b57-4ab3-99ac-a9aafb913e18] [01779ee8-9ee2-46c8-b275-5a02f06616b3]\n\nAWQ 采用逐通道缩放方法，自动搜索在完全权重量化下使量化误差最小的最优缩放，并通过等价变换放大显著权重通道以保护它们。 [847ec81e-3b57-4ab3-99ac-a9aafb913e18] [01779ee8-9ee2-46c8-b275-5a02f06616b3]\n\nAWQ 的缩放系数通过离线收集激活统计量来确定。 [01779ee8-9ee2-46c8-b275-5a02f06616b3]\n\nAWQ 不依赖反向传播或重建，因此能保持 LLM 在不同领域和模态上的泛化能力，而不会过拟合校准集。 [847ec81e-3b57-4ab3-99ac-a9aafb913e18] [01779ee8-9ee2-46c8-b275-5a02f06616b3]",
+      "citations": [
+        {
+          "id": "01779ee8-9ee2-46c8-b275-5a02f06616b3",
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page": 1,
+          "text": "Large language models (LLMs) have transformed numerous AI applications. On-device LLM is becoming increasingly important: running LLMs locally on edge devices can reduce the cloud computing cost and protect users' privacy. However, the astronomical model size and the limited hardware resource pose significant deployment challenges. We propose Activation-aware Weight Quantization (AWQ), a hardware-friendly approach for LLM low-bit weight-only quantization. AWQ finds that not all weights in an LLM are equally important. Protecting only 1% salient weights can greatly reduce quantization error. To identify salient weight channels, we should refer to the activation distribution, not weights. To avoid the hardware-inefficient mix-precision quantization, we mathematically derive that scaling up the salient channels can reduce the quantization error. AWQ employs an equivalent transformation to scale the salient weight channels to protect them. The scale is determined by collecting the activation statistics offline. AWQ does not rely on any backpropagation or reconstruction, so it generalizes to different domains and modalities without overfitting the calibration set. AWQ outperforms existing work on various language modeling and domain-specific benchmarks (coding and math). Thanks to better generalization, it achieves excellent quantization performance for instruction-tuned LMs and, for the first time, multi-modal LMs. Alongside AWQ, we implement TinyChat, an efficient and flexible inference framework tailored for 4-bit on-device LLM/VLMs. With kernel fusion and platform-aware weight packing, TinyChat offers more than 3× speedup over the Huggingface FP16 implementation on both desktop and mobile GPUs. It also democratizes the deployment of the 70B Llama-2 model on mobile GPUs.",
+          "url": "/api/v1/papers/acfe7348-191a-421b-a6e6-0eeb1bb8fb83/file"
+        },
+        {
+          "id": "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page": 2,
+          "text": "In this paper, we propose Activation-aware Weight Quantization (AWQ), a hardware-friendly low-bit weight-only quantization method for LLMs. Our method is based on the observation that weights are not equally important for LLMs' performance. There is a small fraction (0.1%-1%) of salient weights; skipping the quantization of these salient weights will significantly reduce the quantization loss (Table 1). To find the salient weight channels, the insight is that we should refer to the activation distribution instead of the weight distribution, despite we are doing weightonly quantization: weight channels corresponding to larger activation magnitudes are more salient since they process more important features. To avoid the hardware-inefficient mixed-precision implementation, we analyze the error from weight quantization and derive that scaling up the salient channels can reduce their relative quantization error (Equation 2). Following the intuition, we designed a per-channel scaling method to automatically search for the optimal scaling that minimizes the quantization error under full-weight quantization. AWQ does not rely on any backpropagation or reconstruction, so it can well preserve LLMs' generalization ability on various domains and modalities without overfitting to the calibration set.",
+          "url": "/api/v1/papers/acfe7348-191a-421b-a6e6-0eeb1bb8fb83/file"
+        }
+      ],
+      "verification": [
+        {
+          "claim": {
+            "text": "AWQ 是一种面向大语言模型（LLM）的硬件友好型低位仅权重量化方法。",
+            "evidence_ids": [
+              "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+              "01779ee8-9ee2-46c8-b275-5a02f06616b3"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          },
+          "status": "supported",
+          "reasons": [
+            "Both cited sources explicitly state that AWQ (Activation-aware Weight Quantization) is a hardware-friendly low-bit weight-only quantization method for LLMs, matching the claim's entities and conditions exactly."
+          ],
+          "method": "llm_judge_uncertain"
+        },
+        {
+          "claim": {
+            "text": "AWQ 的核心观察是：LLM 中的权重并非同等重要，只有很小一部分（0.1%–1%）显著权重对性能影响较大。",
+            "evidence_ids": [
+              "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+              "01779ee8-9ee2-46c8-b275-5a02f06616b3"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          },
+          "status": "supported",
+          "reasons": [
+            "Both cited snippets directly state the claim's core observation: weights are not equally important for LLM performance, and a small fraction (0.1%–1%) of salient weights exist whose protection/skipping quantization significantly reduces quantization loss. The first source explicitly gives the 0.1%–1% range; the second corroborates that not all weights are equally important and that protecting ~1% salient weights greatly reduces quantization error. All entities and the numeric range match."
+          ],
+          "method": "llm_judge_uncertain"
+        },
+        {
+          "claim": {
+            "text": "AWQ 认为识别显著权重通道应参考激活分布而非权重分布：对应激活幅度较大的权重通道更显著，因为它们处理更重要的特征。",
+            "evidence_ids": [
+              "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+              "01779ee8-9ee2-46c8-b275-5a02f06616b3"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          },
+          "status": "supported",
+          "reasons": [
+            "Both cited sources explicitly state the claim's content. Source 1: \"To find the salient weight channels, the insight is that we should refer to the activation distribution instead of the weight distribution ... weight channels corresponding to larger activation magnitudes are more salient since they process more important features.\" Source 2 corroborates: \"To identify salient weight channels, we should refer to the activation distribution, not weights.\" All entities and conditions match the claim."
+          ],
+          "method": "llm_judge_uncertain"
+        },
+        {
+          "claim": {
+            "text": "为避免硬件效率低下的混合精度实现，AWQ 通过分析权重量化误差推导出：放大显著通道可以降低其相对量化误差。",
+            "evidence_ids": [
+              "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+              "01779ee8-9ee2-46c8-b275-5a02f06616b3"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          },
+          "status": "supported",
+          "reasons": [
+            "Both cited snippets explicitly state that, to avoid hardware-inefficient mixed-precision implementation, AWQ analyzes the error from weight quantization and derives that scaling up the salient channels reduces their relative quantization error (Equation 2). This matches the claim's entities and conditions."
+          ],
+          "method": "llm_judge_uncertain"
+        },
+        {
+          "claim": {
+            "text": "AWQ 采用逐通道缩放方法，自动搜索在完全权重量化下使量化误差最小的最优缩放，并通过等价变换放大显著权重通道以保护它们。",
+            "evidence_ids": [
+              "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+              "01779ee8-9ee2-46c8-b275-5a02f06616b3"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          },
+          "status": "supported",
+          "reasons": [
+            "两个来源片段共同支持该主张。来源 1 指出 AWQ 设计了一种逐通道缩放方法，自动搜索在完全权重量化下使量化误差最小的最优缩放（\"designed a per-channel scaling method to automatically search for the optimal scaling that minimizes the quantization error under full-weight quantization\"）。来源 2 指出 AWQ 采用等价变换放大显著权重通道以保护它们（\"employs an equivalent transformation to scale the salient weight channels to protect them\"）。所有实体、方法和条件均与主张一致。"
+          ],
+          "method": "llm_judge_uncertain"
+        },
+        {
+          "claim": {
+            "text": "AWQ 的缩放系数通过离线收集激活统计量来确定。",
+            "evidence_ids": [
+              "01779ee8-9ee2-46c8-b275-5a02f06616b3"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          },
+          "status": "supported",
+          "reasons": [
+            "The cited source explicitly states: \"The scale is determined by collecting the activation statistics offline.\" This directly entails the claim that AWQ's scaling factors are determined by collecting activation statistics offline."
+          ],
+          "method": "llm_judge_uncertain"
+        },
+        {
+          "claim": {
+            "text": "AWQ 不依赖反向传播或重建，因此能保持 LLM 在不同领域和模态上的泛化能力，而不会过拟合校准集。",
+            "evidence_ids": [
+              "847ec81e-3b57-4ab3-99ac-a9aafb913e18",
+              "01779ee8-9ee2-46c8-b275-5a02f06616b3"
+            ],
+            "experiment_id": null,
+            "method_name": null,
+            "model_name": null,
+            "dataset_name": null,
+            "metric_name": null,
+            "metric_value": null,
+            "metric_unit": null,
+            "average_bits": null,
+            "semantic": true
+          },
+          "status": "supported",
+          "reasons": [
+            "Both cited snippets explicitly state that AWQ does not rely on backpropagation or reconstruction and therefore preserves/generalizes LLMs' generalization ability across domains and modalities without overfitting to the calibration set. The claim matches these statements in entities and conditions."
+          ],
+          "method": "llm_judge_uncertain"
+        }
+      ],
+      "comparisons": [],
+      "trace": [
+        {
+          "node": "classify",
+          "elapsed_ms": 6.935200000043551,
+          "tool_count": 0
+        },
+        {
+          "node": "retrieve",
+          "elapsed_ms": 343.9738000001853,
+          "tool_count": 1
+        },
+        {
+          "node": "generate",
+          "elapsed_ms": 2996.04219999992,
+          "tool_count": 1
+        },
+        {
+          "node": "verify",
+          "elapsed_ms": 10077.35589999993,
+          "tool_count": 1
+        }
+      ],
+      "usage": {
+        "input_tokens": 8174,
+        "output_tokens": 1195,
+        "estimated_cost_usd": null,
+        "cost_source": "unavailable",
+        "calls": [
+          {
+            "schema": "AnswerDraft",
+            "latency_ms": 2650.464499999998,
+            "input_tokens": 1708,
+            "output_tokens": 635,
+            "model": "deepseek-chat"
+          },
+          {
+            "schema": "SemanticVerdict",
+            "latency_ms": 1018.8527999998769,
+            "input_tokens": 955,
+            "output_tokens": 51,
+            "model": "deepseek-chat"
+          },
+          {
+            "schema": "SemanticVerdict",
+            "latency_ms": 1364.4820000004074,
+            "input_tokens": 966,
+            "output_tokens": 108,
+            "model": "deepseek-chat"
+          },
+          {
+            "schema": "SemanticVerdict",
+            "latency_ms": 1007.4278000001868,
+            "input_tokens": 963,
+            "output_tokens": 102,
+            "model": "deepseek-chat"
+          },
+          {
+            "schema": "SemanticVerdict",
+            "latency_ms": 691.4864000000307,
+            "input_tokens": 963,
+            "output_tokens": 65,
+            "model": "deepseek-chat"
+          },
+          {
+            "schema": "SemanticVerdict",
+            "latency_ms": 1233.7992000002487,
+            "input_tokens": 967,
+            "output_tokens": 122,
+            "model": "deepseek-chat"
+          },
+          {
+            "schema": "SemanticVerdict",
+            "latency_ms": 924.8852000000625,
+            "input_tokens": 688,
+            "output_tokens": 50,
+            "model": "deepseek-chat"
+          },
+          {
+            "schema": "SemanticVerdict",
+            "latency_ms": 836.6627999998855,
+            "input_tokens": 964,
+            "output_tokens": 62,
+            "model": "deepseek-chat"
+          }
+        ]
+      },
+      "latency_ms": 10077.382700000271,
+      "errors": [],
+      "task_type": "basic_qa",
+      "tool_count": 1
+    },
+    "citation_files": [
+      {
+        "status": 200,
+        "is_pdf": true,
+        "page": 1
+      },
+      {
+        "status": 200,
+        "is_pdf": true,
+        "page": 2
+      }
+    ]
+  },
+  "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+  "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+  "experiment_count": 18,
+  "experiments": [
+    {
+      "id": "04f3c96b-16d2-494e-8a16-f95473f9a22f",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "04f3c96b-16d2-494e-8a16-f95473f9a22f",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on act.) 3%",
+        "experiment_group": "WikiText perplexity",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "perplexity",
+        "metric_value": "16.68",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": null,
+        "precision_type": "INT3 with 3% FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {},
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (based on act.) 3%",
+          "original_value": "16.68",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": null,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "07c5dfd6-338f-4029-81ff-6a6fdd795478",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "07c5dfd6-338f-4029-81ff-6a6fdd795478",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (random) 0.1%",
+        "experiment_group": "INT3 quantization with FP16 weights",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "119.76",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 (w3-g128)",
+        "precision_type": "INT3 with FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": [
+          "weights"
+        ],
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "0.1%",
+          "fp16_selection": "random"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (random) 0.1%",
+          "original_value": "119.76",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.9,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "12ac3a4b-b7b8-4048-b2ff-704175739b9d",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "12ac3a4b-b7b8-4048-b2ff-704175739b9d",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "RTN (w3-g128)",
+        "experiment_group": "WikiText perplexity",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "perplexity",
+        "metric_value": "119.0",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "RTN",
+        "precision_type": null,
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {},
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "RTN (w3-g128)",
+          "original_value": "119.00",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": null,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "1e75048b-e579-440f-9a22-8e0bfa89c3d5",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "1e75048b-e579-440f-9a22-8e0bfa89c3d5",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16",
+        "experiment_group": "INT3 quantization with FP16 weights",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-6.7B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "10.86",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": null,
+        "precision_type": "FP16",
+        "bit_width": null,
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": null,
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "100%"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-6.7B",
+          "column_identifier": "FP16",
+          "original_value": "10.86",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.9,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "21316f70-166f-4456-971c-04430303e2a1",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "21316f70-166f-4456-971c-04430303e2a1",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on act.) 0.1%",
+        "experiment_group": "INT3 quantization, group size 128",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-6.7B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "11.58",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 + FP16 outlier weights",
+        "precision_type": "INT3",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "0.1%",
+          "selection": "activation-based"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-6.7B",
+          "column_identifier": "FP16% (based on act.) 0.1%",
+          "original_value": "11.58",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "bit_width": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.95,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "27681f91-68c8-45b3-a0c1-53e7f4d07b95",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "27681f91-68c8-45b3-a0c1-53e7f4d07b95",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on W) 0.1%",
+        "experiment_group": "INT3 quantization, group size 128",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-6.7B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "23.41",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 + FP16 outlier weights",
+        "precision_type": "INT3",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "0.1%",
+          "selection": "weight-based"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-6.7B",
+          "column_identifier": "FP16% (based on W) 0.1%",
+          "original_value": "23.41",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "bit_width": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.95,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "295ee641-ef68-42b8-8a6f-9150a5385332",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "295ee641-ef68-42b8-8a6f-9150a5385332",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on act.) 3%",
+        "experiment_group": "INT3 quantization, group size 128",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-6.7B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "11.36",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 + FP16 outlier weights",
+        "precision_type": "INT3",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "3%",
+          "selection": "activation-based"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-6.7B",
+          "column_identifier": "FP16% (based on act.) 3%",
+          "original_value": "11.36",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "bit_width": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.95,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "344b2c1b-b1c9-4bba-a5b3-3802b02ca4a7",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "344b2c1b-b1c9-4bba-a5b3-3802b02ca4a7",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on act.) 1%",
+        "experiment_group": "INT3 quantization, group size 128",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-6.7B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "11.39",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 + FP16 outlier weights",
+        "precision_type": "INT3",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "1%",
+          "selection": "activation-based"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-6.7B",
+          "column_identifier": "FP16% (based on act.) 1%",
+          "original_value": "11.39",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "bit_width": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.95,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "645cb002-3656-4512-b80a-cd5c04ce3798",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "645cb002-3656-4512-b80a-cd5c04ce3798",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (random) 1%",
+        "experiment_group": "INT3 quantization with FP16 weights",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "109.38",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 (w3-g128)",
+        "precision_type": "INT3 with FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": [
+          "weights"
+        ],
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "1%",
+          "fp16_selection": "random"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (random) 1%",
+          "original_value": "109.38",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.9,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "7443d15f-8aa4-4cd3-99bd-bac5355afea8",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "7443d15f-8aa4-4cd3-99bd-bac5355afea8",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on W) 1%",
+        "experiment_group": "INT3 quantization with FP16 weights",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "98.55",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 (w3-g128)",
+        "precision_type": "INT3 with FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": [
+          "weights"
+        ],
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "1%",
+          "fp16_selection": "based on W"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (based on W) 1%",
+          "original_value": "98.55",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.9,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "8077bf51-6420-4a30-9ebf-c3539046bdbe",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "8077bf51-6420-4a30-9ebf-c3539046bdbe",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on act.) 0.1%",
+        "experiment_group": "WikiText perplexity",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "perplexity",
+        "metric_value": "25.03",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": null,
+        "precision_type": "INT3 with 0.1% FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {},
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (based on act.) 0.1%",
+          "original_value": "25.03",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": null,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "a7134faa-2794-4b42-ae76-c3a6d0c59387",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "a7134faa-2794-4b42-ae76-c3a6d0c59387",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16",
+        "experiment_group": "WikiText perplexity",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "perplexity",
+        "metric_value": "14.62",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": null,
+        "precision_type": "FP16",
+        "bit_width": null,
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": null,
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {},
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16",
+          "original_value": "14.62",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": null,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "aedf1950-277c-47ec-b791-7e04301a2aad",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "aedf1950-277c-47ec-b791-7e04301a2aad",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on act.) 1%",
+        "experiment_group": "WikiText perplexity",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "perplexity",
+        "metric_value": "16.91",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": null,
+        "precision_type": "INT3 with 1% FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {},
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (based on act.) 1%",
+          "original_value": "16.91",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": null,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "db057fe7-6c13-4db2-8f7e-a7da0389872d",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "db057fe7-6c13-4db2-8f7e-a7da0389872d",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on W) 3%",
+        "experiment_group": "INT3 quantization with FP16 weights",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "98.08",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 (w3-g128)",
+        "precision_type": "INT3 with FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": [
+          "weights"
+        ],
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "3%",
+          "fp16_selection": "based on W"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (based on W) 3%",
+          "original_value": "98.08",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.9,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "e1e1ed08-e167-4d8d-ae6a-fa623e4aa63a",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "e1e1ed08-e167-4d8d-ae6a-fa623e4aa63a",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (random) 3%",
+        "experiment_group": "INT3 quantization with FP16 weights",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "61.49",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 (w3-g128)",
+        "precision_type": "INT3 with FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": [
+          "weights"
+        ],
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "3%",
+          "fp16_selection": "random"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (random) 3%",
+          "original_value": "61.49",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.9,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "ed49ee61-e3b2-45a2-a6af-05877f0521f7",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "ed49ee61-e3b2-45a2-a6af-05877f0521f7",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on W) 0.1%",
+        "experiment_group": "WikiText perplexity",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-1.3B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "perplexity",
+        "metric_value": "108.71",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": null,
+        "precision_type": "INT3 with 0.1% FP16 weights",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {},
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-1.3B",
+          "column_identifier": "FP16% (based on W) 0.1%",
+          "original_value": "108.71",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": null,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "ede54dfc-e286-4a2e-b2e9-830e738693de",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "ede54dfc-e286-4a2e-b2e9-830e738693de",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "RTN (w3-g128)",
+        "experiment_group": "INT3 quantization, group size 128",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-6.7B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "23.54",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "RTN",
+        "precision_type": "INT3",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "0%"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-6.7B",
+          "column_identifier": "RTN (w3-g128)",
+          "original_value": "23.54",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "bit_width": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.95,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    },
+    {
+      "id": "fdf3fdd7-660e-4855-a59a-1653a6fd9abd",
+      "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+      "library_id": "61c0799b-e3fe-4428-a3a6-db07f1b13698",
+      "record": {
+        "experiment_id": "fdf3fdd7-660e-4855-a59a-1653a6fd9abd",
+        "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+        "method_name": "FP16% (based on W) 1%",
+        "experiment_group": "INT3 quantization, group size 128",
+        "source_type": "table",
+        "extraction_version": "1.0",
+        "extraction_model": "deepseek-chat",
+        "model_name": "OPT-6.7B",
+        "model_version": null,
+        "model_size": null,
+        "model_architecture": null,
+        "model_checkpoint": null,
+        "dataset_name": "WikiText",
+        "dataset_version": null,
+        "dataset_split": null,
+        "evaluation_protocol": null,
+        "metric_name": "Perplexity",
+        "metric_value": "22.37",
+        "metric_unit": "score",
+        "metric_direction": "lower",
+        "metric_definition": null,
+        "quantization_method": "INT3 + FP16 outlier weights",
+        "precision_type": "INT3",
+        "bit_width": "3",
+        "average_bits": null,
+        "quantized_components": null,
+        "quantization_scheme": "group size 128",
+        "calibration_method": null,
+        "calibration_samples": null,
+        "seed_count": null,
+        "reported_variance": null,
+        "inference_settings": null,
+        "hardware": null,
+        "baseline_name": null,
+        "additional_conditions": {
+          "fp16_fraction": "1%",
+          "selection": "weight-based"
+        },
+        "provenance": {
+          "paper_id": "acfe7348-191a-421b-a6e6-0eeb1bb8fb83",
+          "page_number": 4,
+          "section_name": "Analyzing the quantization error.",
+          "table_id": "table-1",
+          "row_identifier": "OPT-6.7B",
+          "column_identifier": "FP16% (based on W) 1%",
+          "original_value": "22.37",
+          "original_text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+          "evidence_ids": [
+            "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+          ],
+          "field_sources": {
+            "metric_value": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "method_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "model_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "dataset_name": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ],
+            "bit_width": [
+              "0d3e4f99-7cbb-4166-b9fd-27ffd806a3f8"
+            ]
+          },
+          "location_precision": "snippet"
+        },
+        "extraction_status": "needs_review",
+        "extraction_confidence": 0.95,
+        "verification_status": "insufficient",
+        "review_status": "unreviewed",
+        "warnings": [
+          "Measurement or cell address is ambiguous"
+        ],
+        "normalization": {}
+      },
+      "version": 1
+    }
+  ],
+  "total_seconds": 84.39368539999987
+}

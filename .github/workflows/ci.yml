@@ -1,0 +1,49 @@
+name: PaperMind checks
+on: [push, pull_request]
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with: {version: '0.11.29'}
+      - run: uv sync --project backend --extra dev --python 3.12 --frozen
+      - run: uv run --project backend --extra dev ruff check backend/app backend/tests
+      - run: cd backend && .venv/bin/python -m pytest -q
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '24', cache: npm, cache-dependency-path: frontend/package-lock.json}
+      - run: cd frontend && npm ci && npm run typecheck && npm run build
+  services:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env: {POSTGRES_DB: papermind, POSTGRES_USER: papermind, POSTGRES_PASSWORD: integration-test-only}
+        ports: ['5432:5432']
+        options: --health-cmd "pg_isready -U papermind" --health-interval 5s --health-retries 15
+      redis:
+        image: redis:7.4-alpine
+        ports: ['6379:6379']
+      qdrant:
+        image: qdrant/qdrant:v1.19.1
+        ports: ['6333:6333']
+    env:
+      PM_ENVIRONMENT: production
+      PM_SECRET_KEY: ci-only-not-a-production-secret-0123456789
+      PM_DATABASE_URL: postgresql+asyncpg://papermind:integration-test-only@localhost:5432/papermind
+      PM_REDIS_URL: redis://localhost:6379/0
+      PM_QDRANT_URL: http://localhost:6333
+      PM_TASK_EAGER: 'false'
+      PM_PARSER: pypdf
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with: {version: '0.11.29'}
+      - run: uv sync --project backend --extra dev --extra local --python 3.12 --frozen
+      - run: cd backend && .venv/bin/alembic upgrade head
+      - run: cd backend && .venv/bin/celery -A app.tasks:celery worker --pool=solo --concurrency=1 --loglevel=INFO > worker.log 2>&1 &
+      - run: cd backend && .venv/bin/python ../scripts/service_smoke.py

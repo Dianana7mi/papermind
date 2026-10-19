@@ -1,0 +1,8 @@
+variant,latency_ms,tool_calls,model_calls,input_tokens,output_tokens,cost_usd,experiments,comparisons,claims,citation_validity,quality_accuracy
+Baseline A: dense,16673.826299999746,1,2,4299,2110,,0,0,8,1.0,
+Baseline B: hybrid,2467.327500000465,1,1,1266,537,,0,0,6,1.0,
+Baseline C: rerank,4250.734399999601,1,1,1896,1177,,0,0,9,1.0,
+Baseline D: agentic,8003.729799999746,3,3,5237,1988,,0,0,7,1.0,
+PaperMind A: structured,7362.0379000003595,4,2,5550,2103,,6,0,17,1.0,
+PaperMind B: comparison,6027.32769999966,5,2,6809,1709,,6,10,13,1.0,
+PaperMind Full,11625.091699999757,5,8,24427,2191,,6,10,12,1.0,

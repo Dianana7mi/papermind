@@ -1,0 +1,48 @@
+# Data profile: ../evaluation/results/retrieval.csv
+
+**Shape:** 48 rows × 11 cols
+
+## Columns
+
+| Column | Type | n | missing | summary |
+|---|---|---|---|---|
+| `question_id` | unknown | 48 | 0 |  |
+| `mode` | unknown | 48 | 0 |  |
+| `recall@5` | continuous | 48 | 0 | mean=0.812, sd=0.352, range=[0, 1], skew=-1.52 (highly skewed); outliers=12 (IQR) |
+| `recall@10` | continuous | 48 | 0 | mean=0.865, sd=0.287, range=[0, 1], skew=-1.93 (highly skewed); outliers=10 (IQR) |
+| `mrr` | continuous | 48 | 0 | mean=0.647, sd=0.363, range=[0.037, 1], skew=-0.23 (approximately symmetric) |
+| `ndcg@10` | continuous | 48 | 0 | mean=0.676, sd=0.322, range=[0, 1], skew=-0.48 (approximately symmetric) |
+| `latency_ms` | continuous | 48 | 0 | mean=26.7, sd=30.3, range=[6.36, 149], skew=1.82 (highly skewed); outliers=10 (IQR) |
+| `input_tokens` | boolean | 48 | 0 | 1 levels: 0(48); min_group_n=48 |
+| `output_tokens` | boolean | 48 | 0 | 1 levels: 0(48); min_group_n=48 |
+| `generation_cost_usd` | boolean | 48 | 0 | 1 levels: 0(48); min_group_n=48 |
+| `cpu_cost_usd` | boolean | 0 | 48 (100%) | 0 levels: ; min_group_n=0 |
+
+## Group structure
+- Grouped by: `mode`
+- Number of groups: 4
+- Group size: min=12, median=12, max=12
+
+## Correlations (Pearson, sorted by |r|)
+- `mrr` ↔ `ndcg@10` : r = 0.942 (very strong)
+- `recall@5` ↔ `recall@10` : r = 0.797 (very strong)
+- `recall@5` ↔ `ndcg@10` : r = 0.755 (very strong)
+- `recall@10` ↔ `ndcg@10` : r = 0.712 (very strong)
+- `recall@5` ↔ `mrr` : r = 0.596 (strong)
+- `recall@10` ↔ `mrr` : r = 0.473 (moderate)
+- `ndcg@10` ↔ `latency_ms` : r = 0.157 (weak)
+- `mrr` ↔ `latency_ms` : r = 0.142 (weak)
+- `recall@10` ↔ `latency_ms` : r = 0.070 (negligible)
+- `recall@5` ↔ `latency_ms` : r = 0.013 (negligible)
+
+## Warnings
+- 列 'cpu_cost_usd' 缺失率 100% — 画图前考虑是否填补、剔除、或在图注中交代。
+
+## Chart suggestions (preliminary)
+- 分类 vs 连续，样本量充足 → 箱线图 / 小提琴图，或带误差棒的柱状图（误差棒说明 SD/SEM/CI）
+- ≥3 个连续变量 → 相关性热力图（['recall@5', 'recall@10', 'mrr', 'ndcg@10', 'latency_ms']）或 pairplot 散点矩阵
+- recall@5 高度偏态（skew=-1.52）→ 考虑对数变换或小提琴图代替均值柱图
+- recall@10 高度偏态（skew=-1.93）→ 考虑对数变换或小提琴图代替均值柱图
+- latency_ms 高度偏态（skew=1.82）→ 考虑对数变换或小提琴图代替均值柱图
+
+> 这是基于数据形态的**初步建议**。最终图型选择必须结合**论证目标**（你想说什么）—— 详见 `references/chart_selection.md`。
