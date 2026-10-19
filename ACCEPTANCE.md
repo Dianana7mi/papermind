@@ -29,6 +29,8 @@ Status is evidence-based: PASS means the stated local acceptance actually ran, P
 
 Review hardening:69 backend tests and2 real browser tests passed. Regression evidence includes wrong units, unsupported condition trust, explicit human confirmations, persisted-record revalidation, matches beyond1,000 candidates, ready-paper scopes, atomic worker claims and legacy orphan recovery. Historical live-model/benchmark outputs below retain their original scope and are not new post-hardening quality measurements. See ADR0004 and saved verification outputs.
 
+Additional post-hardening live check: `evaluation/results/hardening-live-smoke.json` records real AWQ retrieval,2 actual model calls,12 supported numerical claims,10 insufficient-information comparisons and successful persisted-detail readback, with no errors. Independent human annotation count remains0.
+
 - `backend/.venv/Scripts/python -m pytest -q` — see latest saved count and timing in `docs/verification/backend-tests.txt`.
 - `ruff check app tests` — passed; Python sources formatted.
 - Alembic `upgrade head` on SQLite and PostgreSQL `upgrade head --sql` — executed. The latter is SQL generation, not a database connection.

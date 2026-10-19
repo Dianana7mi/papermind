@@ -1,10 +1,10 @@
 {
-  "files_scanned": 136,
+  "files_scanned": 138,
   "credential_values_found": 0,
   "credential_file_paths": [],
   "broken_links": [],
   "openapi_paths": 35,
-  "container_runtime": "BLOCKED",
+  "container_runtime": "BLOCKED locally; GitHub service gate running",
   "human_verified_annotations": 0,
   "backend_tests": 69,
   "browser_tests": 2

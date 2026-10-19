@@ -88,6 +88,8 @@ Reproduce with `python ../evaluation/scripts/agent_ablation.py --deepseek` from 
 
 ## Remaining evaluation work
 
+After ADR0004 hardening, `hardening-live-smoke.json` records a separate real-model HTTP check:10 comparison pairs all remained `INSUFFICIENT_INFORMATION` without verified conditions;12 numeric claims passed original-cell revalidation,2 model calls were measured, and persisted details matched the response. No errors were reported. Earlier raw outputs/figures remain historical observations; none are relabeled as independently human-verified quality results.
+
 An additional real HTTP comparison request exercised generation, verification and conversation persistence after the seven-variant pilot. It returned 10 pairs: five `INSUFFICIENT_INFORMATION` and five `NOT_COMPARABLE`, with three model calls and no errors. Persisted message details were read back and matched the response, including precision-preserving Decimal conditions. The raw response is `evaluation/results/api-comparison-smoke.json`. This is an integration check, not an independently labeled quality benchmark.
 
 The target 30 papers / 150 human-verified experiments / 100 questions is not complete. Independent annotation, field-level extraction gold data, cross-paper semantic QA adjudication, multi-paper comparison cases, randomized latency repetitions and a full seven-variant end-to-end **quality** ablation remain needed. The seven configurations have been executed, but this does not supply missing quality labels. Public deployment/service integration checks are separate from these results and remain blocked by Docker startup.

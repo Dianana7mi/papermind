@@ -43,4 +43,3 @@
 --- ../evaluation/results\retrieval-comparison.svg ---
   category: vector  ext: svg  size: 16289 B
   [PASS] 无问题。
-

@@ -1,0 +1,2673 @@
+{
+  "scope": "Real existing public AWQ library, real configured provider; no human quality labels",
+  "result": {
+    "conversation_id": "ce13d066-17b0-42ae-bebc-9931f3f64333",
+    "message_id": "e11882fb-e55b-4fc1-b02a-3f54414b9f68",
+    "answer": "FP16 — OPT-1.3B / WikiText: 14.62 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nRTN (w3-g128) — OPT-1.3B / WikiText: 119.0 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 0.1% — OPT-1.3B / WikiText: 25.03 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 1% — OPT-1.3B / WikiText: 16.91 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 3% — OPT-1.3B / WikiText: 16.68 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on W) 0.1% — OPT-1.3B / WikiText: 108.71 score perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nRTN (w3-g128) — OPT-6.7B / WikiText: 23.54 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 0.1% — OPT-6.7B / WikiText: 11.58 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 1% — OPT-6.7B / WikiText: 11.39 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on act.) 3% — OPT-6.7B / WikiText: 11.36 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on W) 0.1% — OPT-6.7B / WikiText: 23.41 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nFP16% (based on W) 1% — OPT-6.7B / WikiText: 22.37 score Perplexity. [f3f9c4f7-426e-4d42-9cdf-f8505de5a243]\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.\n\nINSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions.\nUnknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme\nComparability does not establish statistical significance or causal superiority.",
+    "citations": [
+      {
+        "id": "f3f9c4f7-426e-4d42-9cdf-f8505de5a243",
+        "paper_id": "3060a06e-3336-4bce-824e-4ee283e6b4ab",
+        "page": 4,
+        "text": "Table 1. Keeping a small fraction of weights (0.1%-1%) in FP16 significantly improves the performance of the quantized models over round-to-nearest (RTN). It is only effective when we select the important weights in FP16 by looking at activation distribution instead of weight distribution. We highlight results with a decent perplexity in green. We used INT3 quantization with a group size of 128 and measured the WikiText perplexity (↓).\n\n| PPL ↓    |   FP16  |          RTN  |   FP16% (based on act.)  - 0.1%  |   FP16% (based on act.)  - 1%  |   FP16% (based on act.)  - 3%  |   FP16% (based on W)  - 0.1%  |   FP16% (based on W)  - 1%  |   FP16% (based on W)  - 3%  |   FP16% (random) - 0.1%  |   FP16% (random) - 1%  |   FP16% (random) - 3% |\n|          |         |    (w3-g128)  |                                  |                                |                                |                               |                             |                             |                          |                        |                       |\n|----------|---------|---------------|----------------------------------|--------------------------------|--------------------------------|-------------------------------|-----------------------------|-----------------------------|--------------------------|------------------------|-----------------------|\n| OPT-1.3B |   14.62 |        119.00 |                            25.03 |                          16.91 |                          16.68 |                        108.71 |                       98.55 |                       98.08 |                   119.76 |                 109.38 |                 61.49 |\n| OPT-6.7B |   10.86 |         23.54 |                            11.58 |                          11.39 |                          11.36 |                         23.41 |                       22.37 |                       22.45 |                    23.54 |                  24.23 |                 24.22 |\n| OPT-13B  |   10.13 |         46.04 |                            10.51 |                          10.43 |                          10.42 |                         46.07 |                       48.96 |                       54.49 |                    44.87 |                  42.00 |                 39.71 |",
+        "url": "/api/v1/papers/3060a06e-3336-4bce-824e-4ee283e6b4ab/file"
+      }
+    ],
+    "verification": [
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-1.3B 上 FP16 的困惑度为 14.62。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+          "method_name": "FP16",
+          "model_name": "OPT-1.3B",
+          "dataset_name": "WikiText",
+          "metric_name": "perplexity",
+          "metric_value": "14.62",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-1.3B 上 RTN (w3-g128) 的困惑度为 119.00。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "d4e8a18a-4326-4ac9-90a3-0270e3ecacbd",
+          "method_name": "RTN (w3-g128)",
+          "model_name": "OPT-1.3B",
+          "dataset_name": "WikiText",
+          "metric_name": "perplexity",
+          "metric_value": "119.0",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-1.3B 上基于激活分布选择 0.1% 权重保留 FP16 时困惑度为 25.03。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "ae48e6bb-247e-403d-8dc1-93eb2d112919",
+          "method_name": "FP16% (based on act.) 0.1%",
+          "model_name": "OPT-1.3B",
+          "dataset_name": "WikiText",
+          "metric_name": "perplexity",
+          "metric_value": "25.03",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-1.3B 上基于激活分布选择 1% 权重保留 FP16 时困惑度为 16.91。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "a83ba30d-3586-41b4-b48a-cc3d7ee43f80",
+          "method_name": "FP16% (based on act.) 1%",
+          "model_name": "OPT-1.3B",
+          "dataset_name": "WikiText",
+          "metric_name": "perplexity",
+          "metric_value": "16.91",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-1.3B 上基于激活分布选择 3% 权重保留 FP16 时困惑度为 16.68。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "b853d8a8-a247-4c54-93a6-446c87aa6fd7",
+          "method_name": "FP16% (based on act.) 3%",
+          "model_name": "OPT-1.3B",
+          "dataset_name": "WikiText",
+          "metric_name": "perplexity",
+          "metric_value": "16.68",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-1.3B 上基于权重分布选择 0.1% 权重保留 FP16 时困惑度为 108.71。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "65b89b76-edea-4586-903f-98a923cd04c1",
+          "method_name": "FP16% (based on W) 0.1%",
+          "model_name": "OPT-1.3B",
+          "dataset_name": "WikiText",
+          "metric_name": "perplexity",
+          "metric_value": "108.71",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-6.7B 上 RTN (w3-g128) 的困惑度为 23.54。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "d7708e1f-1233-4cc8-80f4-93c36c598346",
+          "method_name": "RTN (w3-g128)",
+          "model_name": "OPT-6.7B",
+          "dataset_name": "WikiText",
+          "metric_name": "Perplexity",
+          "metric_value": "23.54",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-6.7B 上基于激活分布选择 0.1% 权重保留 FP16 时困惑度为 11.58。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "3e639c90-0fe1-4af6-b07f-b340fa7d14e3",
+          "method_name": "FP16% (based on act.) 0.1%",
+          "model_name": "OPT-6.7B",
+          "dataset_name": "WikiText",
+          "metric_name": "Perplexity",
+          "metric_value": "11.58",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-6.7B 上基于激活分布选择 1% 权重保留 FP16 时困惑度为 11.39。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "9d368842-f52d-4cb4-9632-7e6f0d14e7a5",
+          "method_name": "FP16% (based on act.) 1%",
+          "model_name": "OPT-6.7B",
+          "dataset_name": "WikiText",
+          "metric_name": "Perplexity",
+          "metric_value": "11.39",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-6.7B 上基于激活分布选择 3% 权重保留 FP16 时困惑度为 11.36。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "722a444d-1e08-4e3e-8be1-63fb6287d432",
+          "method_name": "FP16% (based on act.) 3%",
+          "model_name": "OPT-6.7B",
+          "dataset_name": "WikiText",
+          "metric_name": "Perplexity",
+          "metric_value": "11.36",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-6.7B 上基于权重分布选择 0.1% 权重保留 FP16 时困惑度为 23.41。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+          "method_name": "FP16% (based on W) 0.1%",
+          "model_name": "OPT-6.7B",
+          "dataset_name": "WikiText",
+          "metric_name": "Perplexity",
+          "metric_value": "23.41",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      },
+      {
+        "claim": {
+          "text": "在 INT3、group size 128 的 WikiText 困惑度实验中，OPT-6.7B 上基于权重分布选择 1% 权重保留 FP16 时困惑度为 22.37。",
+          "evidence_ids": [
+            "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+          ],
+          "experiment_id": "99c9a2d5-a8c5-470c-8bfc-c1bf08d3b39c",
+          "method_name": "FP16% (based on W) 1%",
+          "model_name": "OPT-6.7B",
+          "dataset_name": "WikiText",
+          "metric_name": "Perplexity",
+          "metric_value": "22.37",
+          "metric_unit": "score",
+          "average_bits": null,
+          "semantic": false
+        },
+        "status": "supported",
+        "reasons": [
+          "Structured fields, unit and source cell match"
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "3e639c90-0fe1-4af6-b07f-b340fa7d14e3",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-6.7B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "Perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": "INT3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": "group size 128",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "65b89b76-edea-4586-903f-98a923cd04c1",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-1.3B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "722a444d-1e08-4e3e-8be1-63fb6287d432",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-6.7B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "Perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": "INT3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": "group size 128",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "99c9a2d5-a8c5-470c-8bfc-c1bf08d3b39c",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-6.7B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "Perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": "INT3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": "group size 128",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "9d368842-f52d-4cb4-9632-7e6f0d14e7a5",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-6.7B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "Perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": "INT3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": "group size 128",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "a83ba30d-3586-41b4-b48a-cc3d7ee43f80",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-1.3B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "ad18c231-8200-4beb-ac99-f81cbfefd5f2",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-1.3B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": "FP16",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "ae48e6bb-247e-403d-8dc1-93eb2d112919",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-1.3B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "b853d8a8-a247-4c54-93a6-446c87aa6fd7",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-1.3B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      },
+      {
+        "left_id": "3cab7e39-24f2-4112-89c2-6bd16915b7f4",
+        "right_id": "d4e8a18a-4326-4ac9-90a3-0270e3ecacbd",
+        "status": "INSUFFICIENT_INFORMATION",
+        "domain": "quantization",
+        "matched": [],
+        "mismatched": [],
+        "missing": [
+          "model_name",
+          "model_version",
+          "dataset_name",
+          "dataset_split",
+          "metric_name",
+          "metric_definition",
+          "metric_unit",
+          "average_bits",
+          "quantized_components",
+          "evaluation_protocol",
+          "metric_direction",
+          "bit_width",
+          "precision_type",
+          "quantization_scheme"
+        ],
+        "conditions": [
+          {
+            "field": "model_name",
+            "left": "OPT-6.7B",
+            "right": "OPT-1.3B",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_name",
+            "left": "WikiText",
+            "right": "WikiText",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_split",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_name",
+            "left": "Perplexity",
+            "right": "perplexity",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_definition",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_unit",
+            "left": "score",
+            "right": "score",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "average_bits",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantized_components",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "evaluation_protocol",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "model_checkpoint",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "dataset_version",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "metric_direction",
+            "left": "lower",
+            "right": "lower",
+            "status": "unverified",
+            "severity": "hard",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "bit_width",
+            "left": "3",
+            "right": "3",
+            "status": "unverified",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "precision_type",
+            "left": "INT3",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "quantization_scheme",
+            "left": "group size 128",
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_method",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "calibration_samples",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "seed_count",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "reported_variance",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "inference_settings",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          },
+          {
+            "field": "hardware",
+            "left": null,
+            "right": null,
+            "status": "missing",
+            "severity": "soft",
+            "left_evidence": [],
+            "right_evidence": []
+          }
+        ],
+        "warnings": [
+          "Unknown conditions are not assumed equal: model_name, model_version, dataset_name, dataset_split, metric_name, metric_definition, metric_unit, average_bits, quantized_components, evaluation_protocol, metric_direction, bit_width, precision_type, quantization_scheme",
+          "Comparability does not establish statistical significance or causal superiority."
+        ],
+        "evidence_ids": [
+          "f3f9c4f7-426e-4d42-9cdf-f8505de5a243"
+        ],
+        "explanation": "INSUFFICIENT_INFORMATION: 0 matched conditions, 0 differences, 14 unresolved conditions."
+      }
+    ],
+    "trace": [
+      {
+        "node": "classify",
+        "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+        "elapsed_ms": 5.56239999968966,
+        "tool_count": 0
+      },
+      {
+        "node": "plan",
+        "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+        "elapsed_ms": 1054.4965999997657,
+        "tool_count": 0
+      },
+      {
+        "node": "retrieve",
+        "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+        "elapsed_ms": 1089.6162999997614,
+        "tool_count": 3
+      },
+      {
+        "node": "experiments",
+        "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+        "elapsed_ms": 1096.2562000004255,
+        "tool_count": 4
+      },
+      {
+        "node": "compare",
+        "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+        "elapsed_ms": 1097.2397999994428,
+        "tool_count": 5
+      },
+      {
+        "node": "generate",
+        "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+        "elapsed_ms": 10906.077199999345,
+        "tool_count": 5
+      },
+      {
+        "node": "verify",
+        "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+        "elapsed_ms": 10909.036200000628,
+        "tool_count": 5
+      }
+    ],
+    "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+    "usage": {
+      "input_tokens": 8813,
+      "output_tokens": 3215,
+      "estimated_cost_usd": null,
+      "cost_source": "unavailable",
+      "calls": [
+        {
+          "schema": "Plan",
+          "latency_ms": 976.9849000003887,
+          "input_tokens": 347,
+          "output_tokens": 39,
+          "model": "deepseek-chat",
+          "schema_repair": false,
+          "retry_count": null,
+          "retry_limit": 2
+        },
+        {
+          "schema": "AnswerDraft",
+          "latency_ms": 9807.065899998634,
+          "input_tokens": 8466,
+          "output_tokens": 3176,
+          "model": "deepseek-chat",
+          "schema_repair": false,
+          "retry_count": null,
+          "retry_limit": 2
+        }
+      ],
+      "trace_id": "7f929fc584c544e498dbb1fd952f263a",
+      "token_accounting_complete": true
+    },
+    "latency_ms": 10909.097100000508,
+    "errors": [],
+    "task_type": "comparison",
+    "tool_count": 5
+  },
+  "persisted_details_match": true
+}
