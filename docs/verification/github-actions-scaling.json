@@ -1,0 +1,215 @@
+{
+  "url": "https://github.com/Dianana7mi/papermind/actions/runs/39393849989",
+  "commit": "c7fb77be3aa07cff5904f6c1f642c55034992ef1",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "frontend",
+      "conclusion": "success",
+      "duration_seconds": 27.0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success",
+          "duration_seconds": 2.0
+        },
+        {
+          "name": "Run cd frontend && npm ci && npm run typecheck && npm run build",
+          "conclusion": "success",
+          "duration_seconds": 22.0
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        }
+      ]
+    },
+    {
+      "name": "unit",
+      "conclusion": "success",
+      "duration_seconds": 30.0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Run astral-sh/setup-uv@v6",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Run uv sync --project backend --extra dev --python 3.12 --frozen",
+          "conclusion": "success",
+          "duration_seconds": 3.0
+        },
+        {
+          "name": "Run uv run --project backend --extra dev ruff check backend/app backend/tests",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Run cd backend && .venv/bin/python -m pytest -q",
+          "conclusion": "success",
+          "duration_seconds": 19.0
+        },
+        {
+          "name": "Post Run astral-sh/setup-uv@v6",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "conclusion": "success",
+      "duration_seconds": 64.0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Initialize containers",
+          "conclusion": "success",
+          "duration_seconds": 12.0
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Run astral-sh/setup-uv@v6",
+          "conclusion": "success",
+          "duration_seconds": 2.0
+        },
+        {
+          "name": "Run uv sync --project backend --extra dev --extra local --python 3.12 --frozen",
+          "conclusion": "success",
+          "duration_seconds": 6.0
+        },
+        {
+          "name": "Run cd backend && .venv/bin/python -c \"import torch; assert torch.version.cuda is None; print('CPU torch', torch.__version__)\"",
+          "conclusion": "success",
+          "duration_seconds": 3.0
+        },
+        {
+          "name": "Run cd backend && .venv/bin/alembic upgrade head",
+          "conclusion": "success",
+          "duration_seconds": 2.0
+        },
+        {
+          "name": "Run cd backend && .venv/bin/celery -A app.tasks:celery worker --pool=solo --concurrency=1 --loglevel=INFO > worker.log 2>&1 &",
+          "conclusion": "success",
+          "duration_seconds": 5.0
+        },
+        {
+          "name": "Run cd backend && .venv/bin/python ../scripts/service_smoke.py",
+          "conclusion": "success",
+          "duration_seconds": 29.0
+        },
+        {
+          "name": "Post Run astral-sh/setup-uv@v6",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Stop containers",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        }
+      ]
+    },
+    {
+      "name": "containers",
+      "conclusion": "success",
+      "duration_seconds": 134.0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success",
+          "duration_seconds": 1.0
+        },
+        {
+          "name": "Run docker build -t papermind-backend:ci backend",
+          "conclusion": "success",
+          "duration_seconds": 83.0
+        },
+        {
+          "name": "Run docker run --rm papermind-backend:ci python -c \"import torch; from docling.document_converter import DocumentConverter; assert torch.version.cuda is None; print('CPU parser image imports passed')\"",
+          "conclusion": "success",
+          "duration_seconds": 10.0
+        },
+        {
+          "name": "Run docker build -t papermind-frontend:ci frontend",
+          "conclusion": "success",
+          "duration_seconds": 38.0
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success",
+          "duration_seconds": 0.0
+        }
+      ]
+    }
+  ]
+}

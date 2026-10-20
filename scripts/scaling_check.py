@@ -226,7 +226,9 @@ async def performance():
     profiler.disable()
     output = io.StringIO()
     pstats.Stats(profiler, stream=output).strip_dirs().sort_stats("cumulative").print_stats(12)
-    (ROOT / "docs/verification/bm25-profile-after.txt").write_text(output.getvalue().rstrip() + "\n", encoding="utf-8")
+    (ROOT / "docs/verification/bm25-profile-after.txt").write_text(
+        output.getvalue().rstrip() + "\n", encoding="utf-8"
+    )
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     async with Session() as db:

@@ -31,6 +31,8 @@ Average bits, bit width, method and architecture are pushed into SQL using index
 
 The previous service CI completed in549s, of which495s were dependency installation. The old Linux lock included Torch/CUDA/NVIDIA/Triton wheel candidates estimated at2.79GiB compressed; that was not a Docker image measurement. The new lock contains no CUDA/NVIDIA/Triton packages and explicitly sources Linux torch/torchvision from the [official CPU index using uv sources](https://docs.astral.sh/uv/guides/integration/pytorch/). Windows/macOS retain their appropriate PyPI wheels. Dependency caching is enabled in CI; CI asserts `torch.version.cuda is None`. No replacement wall-time/image-size claim is made until a new job actually completes.
 
+The new [run39393849989](https://github.com/Dianana7mi/papermind/actions/runs/39393849989) completed successfully for source commitc7fb77b. Services took64s, with6s in dependency installation and29s in the real service script; CPU sourcing and cache both changed, so this is not an isolated CPU-wheel speedup experiment. The container job took134s: backend build83s, CPU Docling import/assertion10s, frontend build38s. Those are observed CI step durations, not image sizes or deployment guarantees. All four jobs passed; exact metadata is in `docs/verification/github-actions-scaling.json`.
+
 ## Reproduce
 
 ```powershell

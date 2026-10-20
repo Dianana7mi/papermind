@@ -1,5 +1,5 @@
 {
-  "files_scanned": 146,
+  "files_scanned": 147,
   "credential_values_found": 0,
   "credential_file_paths": [],
   "broken_links": [],
@@ -8,5 +8,7 @@
   "scale_probes": "PASS isolated synthetic SQLite/ASGI and real local MiniLM/Qdrant",
   "human_verified_annotations": 0,
   "original_github_services": "PASS run39215378166",
-  "new_container_ci": "pending push"
+  "new_container_ci": "PASS run39393849989: unit/frontend/services/containers",
+  "postgresql_migrations": "PASS all five revisions and numeric condition service query",
+  "openapi_paths": 35
 }
