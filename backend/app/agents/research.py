@@ -10,9 +10,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.agents.tools import ResearchTools
 from app.core.config import settings
-from app.experiments import SemanticVerdict, canonical, compare, render_numeric_claim, verify_claim
+from app.experiments import ALIASES, SemanticVerdict, canonical, compare, render_numeric_claim, verify_claim
 from app.ingestion.pipeline import evidence_dict
-from app.models import Evidence, Experiment, Paper
+from app.models import Evidence, Experiment, Paper, experiment_filter_expression
 from app.schemas import AnswerDraft, ChatInput, ExperimentFilters, ExperimentRecord, Plan
 from app.services.providers import ModelProvider, Usage
 
@@ -120,6 +120,15 @@ async def query_experiments(
         stmt = stmt.where(Experiment.paper_id == filters.paper_id)
     if paper_ids is not None:
         stmt = stmt.where(Experiment.paper_id.in_(paper_ids))
+    for key in ("average_bits", "bit_width", "method_name", "model_architecture"):
+        value = getattr(filters, key)
+        if value is not None:
+            target = canonical(value)
+            expression = experiment_filter_expression(key)
+            if key in ("average_bits", "bit_width"):
+                stmt = stmt.where(expression == target)
+            else:
+                stmt = stmt.where(expression.in_({target, *(k for k, v in ALIASES.items() if v == target)}))
     result = []
     cursor, matched = None, 0
     # Keyset batches bound memory without silently dropping later matching JSON conditions.
@@ -141,6 +150,8 @@ async def query_experiments(
                 if len(result) >= limit:
                     return result
         cursor = candidates[-1].id
+        if len(candidates) < 200:
+            break
     return result
 
 

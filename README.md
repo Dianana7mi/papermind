@@ -19,9 +19,11 @@ PaperMind 将论文原文、实验记录和可比性规则连接起来：上传 
 
 ## 真实验收与限制
 
-详细清单见 [ACCEPTANCE.md](ACCEPTANCE.md)，原始实验见 [evaluation/results](evaluation/results)。当前已执行 **69 项后端测试、2 项浏览器测试**、前端类型检查和生产构建。真实 AWQ 论文完成 Docling → 本地向量 → 真实 DeepSeek RAG → PDF.js 原文渲染；续跑试验确认记录从 18 条增至 24 条且保留原 ID。小型检索试评测包含 **1 篇真实论文、12 道来源锚点问题**；七种系统配置已完成同题真实调用试验。标签由 Agent 整理，**人工核验标注数为 0**。
+详细清单见 [ACCEPTANCE.md](ACCEPTANCE.md)，原始实验见 [evaluation/results](evaluation/results)。当前后端回归测试 **84 项通过**；此前 **2 项浏览器测试**、前端类型检查和生产构建已通过。真实 AWQ 论文完成 Docling → 本地向量 → 真实 DeepSeek RAG → PDF.js 原文渲染；续跑试验确认记录从 18 条增至 24 条且保留原 ID。小型检索试评测包含 **1 篇真实论文、12 道来源锚点问题**；七种系统配置已完成同题真实调用试验。标签由 Agent 整理，**人工核验标注数为 0**。
 
 实验数值和实验条件分别核验：单位须来自原始单元格或指标标签；填写了模型版本、平均位宽等条件不代表这些条件已证实。实验详情支持逐项人工确认并保存审计记录，缺少已核验条件时返回 `INSUFFICIENT_INFORMATION`。结构化检索支持分页，并排除未完成处理的论文。修复说明见 [ADR 0004](docs/decisions/0004-verification-and-recovery-hardening.md)。
+
+2026-10-20 修复了实体前缀误匹配、多指标单位冲突和预算边界；Dense 改为候选回查，BM25 使用租户/知识库/版本隔离缓存，高频实验条件有数据库表达式索引。Linux 锁文件使用官方 CPU PyTorch，移除 GPU 依赖栈。升级已有环境须执行 `alembic upgrade head`。实测过程与冷/热缓存限制见 [扩容修复报告](docs/scaling-fixes.md)。
 
 生产容器启动、PostgreSQL/Redis/Celery 联合运行及公网 HTTPS 尚未通过本机验收：Docker Desktop 启动失败。Compose 配置校验和 PostgreSQL 离线迁移 SQL 已通过。Langfuse 有实际 SDK 集成，尚无远端服务凭据验证。复杂表格仍可能需要人工审核，不能从单元格对齐通过推断整条实验的全部条件已经正确。
 

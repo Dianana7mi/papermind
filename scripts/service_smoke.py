@@ -3,6 +3,7 @@
 Run from backend using its Python after migrations and worker startup.
 Synthetic PDF is explicitly test input, not a research experiment or benchmark label.
 """
+# ruff: noqa: E402
 
 import asyncio
 import io
@@ -13,11 +14,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
-from httpx import ASGITransport, AsyncClient  # noqa: E402
-from reportlab.pdfgen import canvas  # noqa: E402
+from httpx import ASGITransport, AsyncClient
+from reportlab.pdfgen import canvas
 
-from app.core.config import settings  # noqa: E402
-from app.main import app  # noqa: E402
+from app.core.config import settings
+from app.core.db import Session
+from app.main import app
+from app.models import Experiment, Paper
+from app.schemas import ExperimentRecord
 
 
 async def main():
@@ -30,7 +34,10 @@ async def main():
             ready.raise_for_status()
             auth = await client.post(
                 "/api/v1/auth/register",
-                json={"email": f"service-{uuid.uuid4().hex[:8]}@example.org", "password": uuid.uuid4().hex},
+                json={
+                    "email": f"service-{uuid.uuid4().hex[:8]}@example.org",
+                    "password": uuid.uuid4().hex,
+                },
             )
             auth.raise_for_status()
             client.headers["Authorization"] = "Bearer " + auth.json()["access_token"]
@@ -46,7 +53,13 @@ async def main():
             paper = await client.post(
                 "/api/v1/papers/upload",
                 data={"library_id": library_id},
-                files={"file": ("service-fixture.pdf", buffer.getvalue(), "application/pdf")},
+                files={
+                    "file": (
+                        "service-fixture.pdf",
+                        buffer.getvalue(),
+                        "application/pdf",
+                    )
+                },
             )
             paper.raise_for_status()
             paper_id = paper.json()["id"]
@@ -57,10 +70,39 @@ async def main():
                     break
                 await asyncio.sleep(2)
             assert status.json()["status"] == "ready", status.text
+            # Real PostgreSQL expression-index/schema compatibility, with labeled synthetic conditions.
+            async with Session() as db:
+                source_paper = await db.get(Paper, paper_id)
+                for bit in ("2.500", "4"):
+                    record = ExperimentRecord(model_name="SyntheticModel", average_bits=bit).model_dump(
+                        mode="json"
+                    )
+                    db.add(
+                        Experiment(
+                            id=str(uuid.uuid4()),
+                            paper_id=paper_id,
+                            library_id=library_id,
+                            owner_id=source_paper.owner_id,
+                            fingerprint=bit,
+                            record=record,
+                            original_record=record,
+                        )
+                    )
+                await db.commit()
+            filtered = await client.post(
+                "/api/v1/search/experiments",
+                json={"library_id": library_id, "average_bits": "2.5"},
+            )
+            filtered.raise_for_status()
+            assert len(filtered.json()["items"]) == 1
             for mode in ("bm25", "dense", "hybrid"):
                 found = await client.post(
                     "/api/v1/search",
-                    json={"library_id": library_id, "query": "quantization evidence retrieval", "mode": mode},
+                    json={
+                        "library_id": library_id,
+                        "query": "quantization evidence retrieval",
+                        "mode": mode,
+                    },
                 )
                 found.raise_for_status()
                 assert found.json()["items"], mode

@@ -1,4 +1,4 @@
-# Delivery acceptance — 2026-10-19
+# Delivery acceptance — 2026-10-20
 
 Status is evidence-based: PASS means the stated local acceptance actually ran, PARTIAL means implementation exists with limited verification/scope, BLOCKED identifies an external constraint. This is not a claim that every original target was fully achieved.
 
@@ -7,8 +7,8 @@ Status is evidence-based: PASS means the stated local acceptance actually ran, P
 | 1 | Complete project source | PASS | Independent monorepo, locked Python/npm dependencies; backend tests and frontend build executed. Scope limits below remain. |
 | 2 | Web application | PASS | Production build, real API browser test across all pages/mobile/auth; actual AWQ explorer/comparison/PDF test. `docs/verification/browser-tests.txt`, screenshots. |
 | 3 | FastAPI backend | PASS | Auth/CRUD/search/experiments/graph/SSE/evaluation exercised; exported OpenAPI. `backend/tests/`, `docs/verification/backend-tests.txt`. |
-| 4 | PostgreSQL + migrations | PARTIAL | SQLAlchemy/asyncpg + Alembic code; SQLite migrations executed; PostgreSQL offline SQL generated. Live PostgreSQL blocked by Docker engine. |
-| 5 | Qdrant integration | PASS | Actual embedded Qdrant indexing/query/filter/delete and real local dense search; remote server mode implemented but not locally container-verified. |
+| 4 | PostgreSQL + migrations | PARTIAL | Original four-revision PostgreSQL migration/service gate passed in GitHub CI39215378166. Fifth revision and indexed filters verified on SQLite with PostgreSQL SQL export; new Linux CI is required for that delta. |
+| 5 | Qdrant integration | PASS | Actual embedded Qdrant indexing/query/filter/delete and real local dense search; remote Qdrant also passed the GitHub service smoke. Post-scaling MiniLM/Qdrant lookup succeeded in a10,001-record SQL library. |
 | 6 | Upload + Docling | PASS | Actual 15-page AWQ standard Docling/PDFium parse, table recovery, source pages and raw document; parser limitations/batch warnings retained. |
 | 7 | Dense/BM25/RRF/Reranker | PASS | All four modes invoked with real local models; 12-query real-text pilot and JSON/CSV results. |
 | 8 | Structured extraction | PARTIAL | Original pilot extracted 12 source-aligned candidates. Additional real run extracted18, repeated a batch without duplicates, then continued to24 with original IDs retained (`ingestion-resume-smoke.json`, `http-resume-smoke.json`). Resumable jobs/correction preservation tested; independent full-paper gold accuracy remains unavailable. |
@@ -19,13 +19,15 @@ Status is evidence-based: PASS means the stated local acceptance actually ran, P
 | 13 | Basic online search | PASS | Real OpenAlex HTTP200 query executed; authenticated fixed-endpoint search supports metadata/years/pagination and bounded retry. Metadata-only results are labeled; automatic fulltext import is not implemented. |
 | 14 | Automated RAG evaluation | PARTIAL | Actual 1-paper/12-query ranking pilot, eight synthetic rule cases, six synthetic claim cases, seven real graph variants on one question. No independent human answer/field labels; full 30/150/100 target unfinished. |
 | 15 | End-to-end tests | PASS | Upload→real parser→SQL/index→search→test extraction→SSE→citations→deletion test (isolated model doubles clearly labeled), extra real-provider/PDF smoke, and two real browser tests. |
-| 16 | Docker deployment | BLOCKED | Dockerfiles, Compose, Caddy, persistence/health/migration/worker/scheduler and service gate supplied; static Compose validation passed. Docker Desktop fails inference-manager socket initialization. No images/startup/HTTPS claimed verified. |
+| 16 | Docker deployment | PARTIAL | Compose/config/persistence/health supplied, original GitHub real-service smoke passed. New backend/frontend CPU image CI added; image outcome is recorded after it runs. Local Docker Desktop remains unavailable and public HTTPS/deployment is unverified. |
 | 17 | README | PASS | Actual local startup/reproduction commands, limits, references, secrets handling and screenshots documented. |
 | 18 | API documentation | PASS | Live `/docs`, generated `docs/openapi.json`, request/SSE/error contracts in `docs/api.md`. |
 | 19 | Architecture documentation | PASS | Actual module/storage/graph diagram, data model, security and ADRs match implementation. |
 | 20 | Resume materials | PASS | `docs/portfolio/`: implementation guide, demo, 25 Q&A and CN/EN resume; only observed numbers, no novelty/production claims. |
 
 ## Executed checks
+
+Scaling fixes2026-10-20:84 backend tests passed; source entity/unit and token boundaries are fixed. Synthetic ASGI/SQLite scale check plus actual local MiniLM/Qdrant candidates passed at10,001 records. Warm10k requests114ms,4-way218–231ms; filter51→1 SQL. These exploratory observations do not establish production P95 or model quality. See `docs/scaling-fixes.md` and `evaluation/results/scaling-after.json`. Previously recorded browser/model pilots retain their original execution dates.
 
 Review hardening:69 backend tests and2 real browser tests passed. Regression evidence includes wrong units, unsupported condition trust, explicit human confirmations, persisted-record revalidation, matches beyond1,000 candidates, ready-paper scopes, atomic worker claims and legacy orphan recovery. Historical live-model/benchmark outputs below retain their original scope and are not new post-hardening quality measurements. See ADR0004 and saved verification outputs.
 

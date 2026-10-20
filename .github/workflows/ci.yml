@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
-        with: {version: '0.11.29'}
+        with: {version: '0.11.29', enable-cache: true, cache-dependency-glob: 'backend/uv.lock'}
       - run: uv sync --project backend --extra dev --python 3.12 --frozen
       - run: uv run --project backend --extra dev ruff check backend/app backend/tests
       - run: cd backend && .venv/bin/python -m pytest -q
@@ -42,8 +42,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
-        with: {version: '0.11.29'}
+        with: {version: '0.11.29', enable-cache: true, cache-dependency-glob: 'backend/uv.lock'}
       - run: uv sync --project backend --extra dev --extra local --python 3.12 --frozen
+      - run: cd backend && .venv/bin/python -c "import torch; assert torch.version.cuda is None; print('CPU torch', torch.__version__)"
       - run: cd backend && .venv/bin/alembic upgrade head
       - run: cd backend && .venv/bin/celery -A app.tasks:celery worker --pool=solo --concurrency=1 --loglevel=INFO > worker.log 2>&1 &
       - run: cd backend && .venv/bin/python ../scripts/service_smoke.py
+  containers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t papermind-backend:ci backend
+      - run: docker run --rm papermind-backend:ci python -c "import torch; from docling.document_converter import DocumentConverter; assert torch.version.cuda is None; print('CPU parser image imports passed')"
+      - run: docker build -t papermind-frontend:ci frontend

@@ -1,0 +1,323 @@
+{
+  "date": "2026-10-20",
+  "implementation": "post-scaling-fixes working tree",
+  "environment": {
+    "python": "3.12.4",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "scope": "Synthetic isolated fixtures; real BM25/SQLAlchemy/SQLite/ASGI code. No live LLM/reranker or production concurrency measurement. Optional dense check uses the actual local model.",
+  "correctness": [
+    {
+      "case": "method_name_prefix_collision",
+      "expected": "insufficient",
+      "actual": "insufficient"
+    },
+    {
+      "case": "model_name_prefix_collision",
+      "expected": "insufficient",
+      "actual": "insufficient"
+    },
+    {
+      "case": "dataset_name_prefix_collision",
+      "expected": "insufficient",
+      "actual": "insufficient"
+    },
+    {
+      "case": "mixed_metric_caption",
+      "expected": "supported",
+      "actual": "supported"
+    }
+  ],
+  "input_budget": {
+    "scope": "deterministic provider double; no network/model spend",
+    "configured_limit": 24000,
+    "initial_usage": 24000,
+    "provider_called_after_exhaustion": false,
+    "final_usage": 24000
+  },
+  "bm25_microbenchmark": [
+    {
+      "documents": 1000,
+      "characters_per_document": 2079,
+      "median_ms": 100.58,
+      "samples_ms": [
+        108.32,
+        100.58,
+        98.59
+      ]
+    },
+    {
+      "documents": 5000,
+      "characters_per_document": 2079,
+      "median_ms": 505.56,
+      "samples_ms": [
+        505.56,
+        484.32,
+        640.57
+      ]
+    },
+    {
+      "documents": 10000,
+      "characters_per_document": 2079,
+      "median_ms": 1052.43,
+      "samples_ms": [
+        1041.05,
+        1086.03,
+        1052.43
+      ]
+    }
+  ],
+  "dense_check": "Real CPU MiniLM embeddings and embedded Qdrant; two indexed source candidates in a 10,001-record SQL library",
+  "search_cap": [
+    {
+      "documents": 10001,
+      "mode": "bm25",
+      "status": 200,
+      "response": {
+        "items": [
+          {
+            "id": "000adf12-bc9c-5c65-889d-112f5643adc1",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group66",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 1.1479725666557496
+          },
+          {
+            "id": "001c586a-3d6c-57e6-b8b3-fc3ddaf842bb",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group59",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 1.1479725666557496
+          },
+          {
+            "id": "001c920d-673b-5f13-960f-f57dfa5bc709",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group3",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 1.1479725666557496
+          },
+          {
+            "id": "001cc20c-e808-5547-8dde-c78fae7e8c1e",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group31",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 1.1479725666557496
+          },
+          {
+            "id": "00206caa-2ae7-54d7-bb0c-3a181240d27d",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group31",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 1.1479725666557496
+          },
+          {
+            "id": "0023047c-d7a8-5484-8528-cbca5d05037d",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group22",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 1.1479725666557496
+          },
+          {
+            "id": "002b199c-9a6a-526b-80b8-86e9add6820d",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group21",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 1.1479725666557496
+          },
+          {
+            "id": "002b2b53-50e5-59bd-9ce8-0da6d4905fa4",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group29",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 1.1479725666557496
+          }
+        ],
+        "mode": "bm25",
+        "level": "evidence",
+        "timing": {
+          "total_ms": 2025.662399999419,
+          "dense_ms": 0.0,
+          "rerank_ms": 0.0
+        }
+      }
+    },
+    {
+      "documents": 10001,
+      "mode": "dense",
+      "status": 200,
+      "response": {
+        "items": [
+          {
+            "id": "f7368014-0263-5575-9c5a-529466b04eb9",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group1",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 0.29040187889949065
+          },
+          {
+            "id": "850192de-572b-5e34-b369-1750230a500a",
+            "paper_id": "paper-10001",
+            "text": "Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions. Synthetic scientific evidence about quantization model evaluation accuracy datasets calibration mixed precision weights memory perplexity results benchmark retrieval experiment conditions.  group0",
+            "page": 1,
+            "section": null,
+            "kind": "paragraph",
+            "locator": {},
+            "score": 0.29040187889949065
+          }
+        ],
+        "mode": "dense",
+        "level": "evidence",
+        "timing": {
+          "total_ms": 21.272500000122818,
+          "dense_ms": 19.346800000676012,
+          "rerank_ms": 0.0
+        }
+      }
+    }
+  ],
+  "asgi_benchmark": [
+    {
+      "documents": 1000,
+      "concurrency": 1,
+      "cache": "cold",
+      "requests": [
+        {
+          "status": 200,
+          "wall_ms": 349.53,
+          "items": 8
+        }
+      ],
+      "max_event_loop_lag_ms": 39.97
+    },
+    {
+      "documents": 1000,
+      "concurrency": 1,
+      "cache": "warm",
+      "requests": [
+        {
+          "status": 200,
+          "wall_ms": 102.66,
+          "items": 8
+        }
+      ],
+      "max_event_loop_lag_ms": 7.44
+    },
+    {
+      "documents": 10000,
+      "concurrency": 1,
+      "cache": "cold",
+      "requests": [
+        {
+          "status": 200,
+          "wall_ms": 1577.52,
+          "items": 8
+        }
+      ],
+      "max_event_loop_lag_ms": 45.61
+    },
+    {
+      "documents": 10000,
+      "concurrency": 1,
+      "cache": "warm",
+      "requests": [
+        {
+          "status": 200,
+          "wall_ms": 113.79,
+          "items": 8
+        }
+      ],
+      "max_event_loop_lag_ms": 15.39
+    },
+    {
+      "documents": 10000,
+      "concurrency": 4,
+      "cache": "warm",
+      "requests": [
+        {
+          "status": 200,
+          "wall_ms": 219.02,
+          "items": 8
+        },
+        {
+          "status": 200,
+          "wall_ms": 222.75,
+          "items": 8
+        },
+        {
+          "status": 200,
+          "wall_ms": 230.52,
+          "items": 8
+        },
+        {
+          "status": 200,
+          "wall_ms": 218.03,
+          "items": 8
+        }
+      ],
+      "max_event_loop_lag_ms": 14.93
+    }
+  ],
+  "structured_filter_benchmark": [
+    {
+      "filters": {
+        "model_name": "SyntheticModel"
+      },
+      "matching_records": 10,
+      "sql_statements": [
+        1,
+        1,
+        1
+      ],
+      "samples_ms": [
+        90.91,
+        84.14,
+        77.43
+      ],
+      "median_ms": 84.14
+    },
+    {
+      "filters": {
+        "average_bits": "3"
+      },
+      "matching_records": 1,
+      "sql_statements": [
+        1,
+        1,
+        1
+      ],
+      "samples_ms": [
+        67.19,
+        60.24,
+        48.9
+      ],
+      "median_ms": 60.24
+    }
+  ]
+}

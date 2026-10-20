@@ -1,7 +1,7 @@
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import SecretStr, model_validator
+from pydantic import Field, SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -24,6 +24,9 @@ class Settings(BaseSettings):
     max_extraction_sources: int = 20
     token_expiry_minutes: int = 120
     rate_limit_per_minute: int = 120
+    bm25_max_documents: int = Field(default=50000, ge=1, le=1000000)
+    bm25_max_characters: int = Field(default=32000000, ge=1000)
+    bm25_cache_entries: int = Field(default=2, ge=1, le=8)
     base_url: str = "https://api.openai.com/v1"
     api_key: SecretStr | None = None
     chat_model: str = "gpt-4.1-mini"

@@ -33,6 +33,7 @@ from app.models import (
     PublicReference,
     Revision,
     User,
+    touch_library,
     uid,
 )
 from app.retrieval import experiment_text, index_documents, retrieval_metrics, search
@@ -160,6 +161,7 @@ async def delete_paper_rows(db, paper):
     for entity in (Experiment, Evidence, Job):
         await db.execute(delete(entity).where(entity.paper_id == paper.id))
     db.add(Cleanup(paper_id=paper.id))
+    await touch_library(db, paper.library_id)
     await db.delete(paper)
 
 
@@ -544,6 +546,7 @@ async def revise_experiment(experiment_id: str, body: RevisionInput, db: DB, use
     db.add(
         Revision(experiment_id=row.id, user_id=user.id, before=before, after=record_json, reason=body.reason)
     )
+    await touch_library(db, row.library_id)
     await db.commit()
     try:
         await index_documents(

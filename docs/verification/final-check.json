@@ -1,11 +1,12 @@
 {
-  "files_scanned": 138,
+  "files_scanned": 146,
   "credential_values_found": 0,
   "credential_file_paths": [],
   "broken_links": [],
-  "openapi_paths": 35,
-  "container_runtime": "BLOCKED locally; GitHub service gate running",
+  "backend_tests": 84,
+  "browser_tests": "2 historical passes; no frontend source changes",
+  "scale_probes": "PASS isolated synthetic SQLite/ASGI and real local MiniLM/Qdrant",
   "human_verified_annotations": 0,
-  "backend_tests": 69,
-  "browser_tests": 2
+  "original_github_services": "PASS run39215378166",
+  "new_container_ci": "pending push"
 }

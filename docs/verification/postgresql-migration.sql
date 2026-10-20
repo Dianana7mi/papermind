@@ -216,4 +216,18 @@ ALTER TABLE papers ADD COLUMN extraction_lock VARCHAR(36);
 
 UPDATE alembic_version SET version_num='63fa391b4bb1' WHERE alembic_version.version_num = 'ae5fbc09260d';
 
+-- Running upgrade 63fa391b4bb1 -> b53710c48e29
+
+ALTER TABLE libraries ADD COLUMN retrieval_revision INTEGER DEFAULT '0' NOT NULL;
+
+CREATE INDEX ix_experiment_json_average_bits ON experiments (owner_id, library_id, CAST(CAST(record ->> 'average_bits' AS VARCHAR) AS NUMERIC(38, 16)));
+
+CREATE INDEX ix_experiment_json_bit_width ON experiments (owner_id, library_id, CAST(CAST(record ->> 'bit_width' AS VARCHAR) AS NUMERIC(38, 16)));
+
+CREATE INDEX ix_experiment_json_method_name ON experiments (owner_id, library_id, lower(trim(CAST(record ->> 'method_name' AS VARCHAR))));
+
+CREATE INDEX ix_experiment_json_model_architecture ON experiments (owner_id, library_id, lower(trim(CAST(record ->> 'model_architecture' AS VARCHAR))));
+
+UPDATE alembic_version SET version_num='b53710c48e29' WHERE alembic_version.version_num = '63fa391b4bb1';
+
 COMMIT;

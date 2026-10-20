@@ -1,4 +1,5 @@
 import re
+import unicodedata
 from decimal import Decimal, InvalidOperation
 from typing import Literal
 
@@ -60,25 +61,54 @@ def measurement_equal(av, au, bv, bu) -> bool:
     return a == b
 
 
-def source_unit(raw: str, context: str) -> str:
-    """Use source literals/metric labels, never the model's proposed unit."""
-    if "%" in raw:
-        return "percent"
+def entity_matches(value: str | None, context: str) -> bool:
+    """Match complete scientific names, including explicit aliases and version suffixes."""
+    if not value:
+        return False
+    normalized = unicodedata.normalize("NFKC", context).casefold()
+    target = canonical(unicodedata.normalize("NFKC", value))
+    variants = {target, *(k for k, v in ALIASES.items() if v == target)}
+    return any(
+        re.search(
+            r"(?<![\w.+/\-])" + r"\s+".join(re.escape(p) for p in name.split()) + r"(?![\w+/\-]|\.\w)",
+            normalized,
+        )
+        for name in variants
+    )
+
+
+def metric_labels(context: str) -> set[str]:
+    return {
+        name
+        for name in ("accuracy", "perplexity", "precision", "recall", "f1", "latency", "throughput")
+        if entity_matches(name, context)
+    }
+
+
+def context_units(context: str) -> set[str]:
     context = context.casefold()
-    if re.search(r"(?:accuracy|acc\.?|precision|recall|f1)\s*(?:\(\s*)?(?:%|percent)", context):
-        return "percent"
-    if re.search(r"(?:accuracy|acc\.?|precision|recall|f1)\s*\(?\s*fraction", context):
-        return "fraction"
-    if re.search(r"\b(?:perplexity|ppl)\b", context):
-        return "score"
+    units = set()
     for pattern, unit in (
-        (r"\bmilliseconds\b|\(ms\)", "ms"),
-        (r"\bseconds\b|\(s\)", "seconds"),
+        (r"%|\bpercent(?:age)?\b", "percent"),
+        (r"\bfraction\b", "fraction"),
+        (r"\b(?:perplexity|ppl|score)\b", "score"),
+        (r"\bmilliseconds\b|\(\s*ms\s*\)", "ms"),
+        (r"\bseconds\b|\(\s*s\s*\)", "seconds"),
         (r"\bcount\b", "count"),
     ):
         if re.search(pattern, context):
-            return unit
-    return "unknown"
+            units.add(unit)
+    return units
+
+
+def source_unit(raw: str, headers: str, captions: str = "") -> str:
+    """Column-specific units take precedence; ambiguous shared captions stay unknown."""
+    if "%" in raw:
+        return "percent"
+    units = context_units(headers)
+    if not units:
+        units = context_units(captions)
+    return next(iter(units)) if len(units) == 1 else "unknown"
 
 
 def verified_field(record: ExperimentRecord, key: str) -> bool:
@@ -258,23 +288,24 @@ def align_record(record: ExperimentRecord, evidence: dict[str, dict]) -> Experim
             captions = " ".join(source.get("locator", {}).get("captions", []))
             all_headers = " ".join(c["text"] for c in cells if c.get("column_header") and c["col"] == 0)
             context = headers + " " + row_labels + " " + captions + " " + all_headers
-            dataset_matches = record.dataset_name and canonical(record.dataset_name) in canonical(context)
-            model_matches = record.model_name and canonical(record.model_name) in canonical(context)
+            dataset_matches = entity_matches(record.dataset_name, context)
+            model_matches = entity_matches(record.model_name, context)
             # Some tables put methods in columns and models in rows; preserve both orientations.
-            normalized_method = " ".join(canonical(record.method_name).split()) if record.method_name else ""
             # Multi-level headers can place the method and budget on different rows.
             header_context = " ".join(
                 c["text"]
                 for c in cells
                 if c.get("column_header") and c["col"] <= col < c.get("end_col", c["col"] + 1)
             )
-            method_matches = normalized_method and normalized_method in " ".join(
-                canonical(header_context + " " + row_labels).split()
+            method_matches = entity_matches(record.method_name, header_context + " " + row_labels)
+            column_metrics = metric_labels(headers)
+            caption_metrics = metric_labels(captions)
+            metric_matches = (
+                canonical(record.metric_name) in column_metrics
+                if column_metrics
+                else len(caption_metrics) <= 1 and entity_matches(record.metric_name, context)
             )
-            metric_context = re.sub(r"\bppl\b", "perplexity", canonical(context))
-            metric_context = re.sub(r"\bacc\.?\b", "accuracy", metric_context)
-            metric_matches = record.metric_name and canonical(record.metric_name) in metric_context
-            unit = source_unit(cell["text"], headers + " " + captions)
+            unit = source_unit(cell["text"], headers, captions)
             if unit == "unknown":
                 record.warnings.append("Source unit could not be independently established")
                 return record

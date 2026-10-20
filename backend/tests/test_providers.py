@@ -9,6 +9,12 @@ from app.experiments import SemanticVerdict
 from app.services.providers import ModelProvider
 
 
+@pytest.fixture(autouse=True)
+def isolated_token_estimate(monkeypatch):
+    # Provider doubles do not download tokenizer assets or make network calls.
+    monkeypatch.setattr("app.services.providers.estimate_tokens", lambda text, model: (200, "isolated-test"))
+
+
 @pytest.mark.parametrize("always_invalid", [False, True])
 async def test_schema_repair_is_bounded_and_metered(monkeypatch, always_invalid):
     import app.services.providers as providers

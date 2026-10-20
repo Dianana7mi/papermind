@@ -1,7 +1,19 @@
 import uuid
 from datetime import UTC, datetime
 
-from sqlalchemy import JSON, DateTime, ForeignKey, Index, String, Text, UniqueConstraint
+from sqlalchemy import (
+    JSON,
+    DateTime,
+    ForeignKey,
+    Index,
+    Numeric,
+    String,
+    Text,
+    UniqueConstraint,
+    cast,
+    func,
+    update,
+)
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
@@ -32,6 +44,7 @@ class Library(Base):
     name: Mapped[str] = mapped_column(String(200))
     description: Mapped[str] = mapped_column(Text, default="")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    retrieval_revision: Mapped[int] = mapped_column(default=0, server_default="0")
 
 
 class Paper(Base):
@@ -150,3 +163,30 @@ class PublicReference(Base):
     library_id: Mapped[str] = mapped_column(ForeignKey("libraries.id"), index=True)
     external_id: Mapped[str] = mapped_column(String(100))
     metadata_json: Mapped[dict] = mapped_column(JSON)
+
+
+def experiment_filter_expression(field: str):
+    value = Experiment.record[field].as_string()
+    return (
+        cast(value, Numeric(38, 16))
+        if field in ("average_bits", "bit_width")
+        else func.lower(func.trim(value))
+    )
+
+
+for _field in ("average_bits", "bit_width", "method_name", "model_architecture"):
+    Index(
+        f"ix_experiment_json_{_field}",
+        Experiment.owner_id,
+        Experiment.library_id,
+        experiment_filter_expression(_field),
+    )
+
+
+async def touch_library(db, library_id: str):
+    """Increment within the same write transaction; all replicas observe cache invalidation."""
+    await db.execute(
+        update(Library)
+        .where(Library.id == library_id)
+        .values(retrieval_revision=Library.retrieval_revision + 1)
+    )

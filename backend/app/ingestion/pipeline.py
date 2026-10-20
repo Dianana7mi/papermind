@@ -10,7 +10,7 @@ from app.core.config import settings
 from app.core.db import Session
 from app.experiments import align_record, canonical, parse_measurement
 from app.ingestion.parser import chunk_section, parse_pdf
-from app.models import Cleanup, Evidence, Experiment, Job, Paper, Revision, now, uid
+from app.models import Cleanup, Evidence, Experiment, Job, Paper, Revision, now, touch_library, uid
 from app.retrieval import delete_vectors, experiment_text, index_documents
 from app.schemas import ExtractionBatch
 from app.services.providers import ModelProvider, Usage
@@ -157,6 +157,7 @@ async def ingest(paper_id: str):
             # If deletion raced processing, the FK/conditional update prevents resurrection.
             await db.refresh(paper)
             paper.status = "ready"
+            await touch_library(db, paper.library_id)
             job.status, job.stage = "completed", "done"
             job.details = {
                 "evidence_count": len(sources),
@@ -329,6 +330,7 @@ async def extract_range(db, paper, sources, usage, offset=0, limit=None, lock_id
                 db.add(row)
                 added.append(row)
                 added_ids.append(row.id)
+            await touch_library(db, paper.library_id)
             await db.commit()
             info["next_batch"] = batch_index + 1
         except Exception as exc:

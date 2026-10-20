@@ -1,9 +1,13 @@
 import asyncio
 import math
 import re
+import threading
 import time
+from collections import OrderedDict
+from dataclasses import dataclass
 from functools import lru_cache
 
+from fastapi import HTTPException
 from qdrant_client import QdrantClient
 from qdrant_client import models as qm
 from rank_bm25 import BM25Okapi
@@ -11,7 +15,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
-from app.models import Evidence, Experiment, Paper
+from app.models import Evidence, Experiment, Library, Paper
 from app.schemas import SearchInput
 from app.services.providers import embed, rerank, vector_collection
 
@@ -52,6 +56,90 @@ def rrf(rankings: list[list[dict]], k: int = 60) -> list[dict]:
         {**documents[key], "score": score}
         for key, score in sorted(scores.items(), key=lambda x: (-x[1], x[0]))
     ]
+
+
+@dataclass
+class LexicalIndex:
+    ids: list[str]
+    scorer: BM25Okapi
+
+    def query(self, query: str) -> list[dict]:
+        tokens = tokenize(query)
+        terms = set(tokens)
+        scores = self.scorer.get_scores(tokens)
+        matches = (i for i, freq in enumerate(self.scorer.doc_freqs) if any(t in freq for t in terms))
+        ranked = sorted(matches, key=lambda i: scores[i], reverse=True)[:40]
+        return [{"id": self.ids[i], "score": float(scores[i])} for i in ranked]
+
+
+_lexical_cache: OrderedDict[tuple, LexicalIndex] = OrderedDict()
+_cache_lock, _build_lock = threading.Lock(), threading.Lock()
+
+
+def cached_lexical(key):
+    with _cache_lock:
+        index = _lexical_cache.get(key)
+        if index is not None:
+            _lexical_cache.move_to_end(key)
+        return index
+
+
+def compile_lexical(key, documents):
+    # A worker-thread lock prevents simultaneous cold requests from rebuilding the same corpus.
+    # ponytail: one cold build at a time bounds CPU; use per-scope locks if many libraries must build in parallel.
+    with _build_lock:
+        if (index := cached_lexical(key)) is not None:
+            return index
+        index = LexicalIndex(
+            [d[0] for d in documents], BM25Okapi([tokenize(d[1]) or ["__empty__"] for d in documents])
+        )
+        with _cache_lock:
+            _lexical_cache[key] = index
+            while len(_lexical_cache) > max(1, settings().bm25_cache_entries):
+                _lexical_cache.popitem(last=False)
+        return index
+
+
+async def lexical_search(db, entity, scope, owner_id, request):
+    revision = await db.scalar(
+        select(Library.retrieval_revision).where(
+            Library.id == request.library_id, Library.owner_id == owner_id
+        )
+    )
+    if revision is None:
+        return []
+    key = (settings().database_url, owner_id, request.library_id, request.paper_id, request.level, revision)
+    index = cached_lexical(key)
+    if index is None:
+        text = entity.text if entity is Evidence else entity.record if entity is Experiment else entity.title
+        columns = [entity.id, text]
+        if entity is Paper:
+            columns.append(Paper.metadata_json["abstract"].as_string())
+        rows = await db.stream(
+            scope.with_only_columns(*columns).order_by(entity.id).execution_options(yield_per=200)
+        )
+        documents, characters = [], 0
+        try:
+            async for row in rows:
+                content = experiment_text(row[1]) if entity is Experiment else row[1]
+                if entity is Paper:
+                    content += "\n" + (row[2] or "")
+                characters += len(content)
+                if (
+                    len(documents) >= settings().bm25_max_documents
+                    or characters > settings().bm25_max_characters
+                ):
+                    raise HTTPException(
+                        422,
+                        "Lexical index exceeds configured capacity; use dense search or split the library",
+                    )
+                documents.append((row[0], content))
+        finally:
+            await rows.close()
+        if not documents:
+            return []
+        index = await asyncio.to_thread(compile_lexical, key, documents)
+    return await asyncio.to_thread(index.query, request.query)
 
 
 @lru_cache
@@ -120,41 +208,10 @@ async def search(db: AsyncSession, owner_id: str, request: SearchInput) -> dict:
         stmt = stmt.where(Paper.status == "ready")
     else:
         stmt = stmt.join(Paper, Paper.id == entity.paper_id).where(Paper.status == "ready")
-    # ponytail: bounded in-memory BM25 for <=10k evidence units per library; move sparse index to Qdrant beyond this.
-    rows = (await db.scalars(stmt.limit(10001))).all()
-    if len(rows) > 10000:
-        raise ValueError("Library exceeds in-memory sparse index limit; shard the library")
-    documents = []
-    for row in rows:
-        if isinstance(row, Evidence):
-            item = {
-                "id": row.id,
-                "paper_id": row.paper_id,
-                "text": row.text,
-                "page": row.page,
-                "section": row.section,
-                "kind": row.kind,
-                "locator": row.locator,
-            }
-        elif isinstance(row, Paper):
-            item = {
-                "id": row.id,
-                "paper_id": row.id,
-                "text": row.title + "\n" + row.metadata_json.get("abstract", ""),
-                "title": row.title,
-            }
-        else:
-            item = {
-                "id": row.id,
-                "paper_id": row.paper_id,
-                "text": experiment_text(row.record),
-                "record": row.record,
-            }
-        documents.append(item)
-    lexical = bm25(request.query, documents, 40) if request.mode != "dense" else []
+    lexical = await lexical_search(db, entity, stmt, owner_id, request) if request.mode != "dense" else []
     dense = []
     dense_ms = 0.0
-    if request.mode != "bm25" and documents:
+    if request.mode != "bm25":
         ds = time.perf_counter()
         query = (await embed([request.query]))[0]
         conditions = [
@@ -176,13 +233,46 @@ async def search(db: AsyncSession, owner_id: str, request: SearchInput) -> dict:
             ).points
 
         points = await asyncio.to_thread(retrieve)
-        allowed = {d["id"]: d for d in documents}
-        # Hydrate through authorized SQL records. Deleted/stale points cannot leak through.
-        dense = [{**allowed[str(p.id)], "score": p.score} for p in points if str(p.id) in allowed]
+        dense = [{"id": str(p.id), "score": p.score} for p in points]
         dense_ms = (time.perf_counter() - ds) * 1000
     ranked = (
         lexical if request.mode == "bm25" else dense if request.mode == "dense" else rrf([dense, lexical])
     )
+    # Hydrate only bounded candidates through SQL. Cached/deleted/stale points never bypass authorization.
+    ids = [d["id"] for d in ranked]
+    if ids and entity is Paper:
+        rows = (
+            await db.execute(
+                stmt.with_only_columns(
+                    Paper.id, Paper.title, Paper.metadata_json["abstract"].as_string()
+                ).where(Paper.id.in_(ids))
+            )
+        ).all()
+    else:
+        rows = (await db.scalars(stmt.where(entity.id.in_(ids)))).all() if ids else []
+    documents = {}
+    for row in rows:
+        if entity is Paper:
+            item = {"id": row[0], "paper_id": row[0], "text": row[1] + "\n" + (row[2] or ""), "title": row[1]}
+        elif isinstance(row, Evidence):
+            item = {
+                "id": row.id,
+                "paper_id": row.paper_id,
+                "text": row.text,
+                "page": row.page,
+                "section": row.section,
+                "kind": row.kind,
+                "locator": row.locator,
+            }
+        else:
+            item = {
+                "id": row.id,
+                "paper_id": row.paper_id,
+                "text": experiment_text(row.record),
+                "record": row.record,
+            }
+        documents[item["id"]] = item
+    ranked = [{**documents[d["id"]], "score": d["score"]} for d in ranked if d["id"] in documents]
     rerank_ms = 0.0
     if request.mode == "rerank" and ranked:
         rs = time.perf_counter()

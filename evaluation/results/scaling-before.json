@@ -1,0 +1,203 @@
+{
+  "date": "2026-10-20",
+  "commit": "0b49ded",
+  "environment": {
+    "python": "3.12.4",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "scope": "Synthetic isolated fixtures; real BM25/SQLAlchemy/SQLite/ASGI code. No live LLM/dense/reranker or production concurrency measurement.",
+  "correctness": [
+    {
+      "case": "method_name_prefix_collision",
+      "expected": "insufficient",
+      "actual": "supported"
+    },
+    {
+      "case": "model_name_prefix_collision",
+      "expected": "insufficient",
+      "actual": "supported"
+    },
+    {
+      "case": "dataset_name_prefix_collision",
+      "expected": "insufficient",
+      "actual": "supported"
+    },
+    {
+      "case": "mixed_metric_caption",
+      "expected": "supported",
+      "actual": "contradicted"
+    }
+  ],
+  "input_budget": {
+    "scope": "deterministic provider double; no network/model spend",
+    "configured_limit": 24000,
+    "initial_usage": 24000,
+    "provider_called_after_exhaustion": true,
+    "final_usage": 24001
+  },
+  "bm25_microbenchmark": [
+    {
+      "documents": 1000,
+      "characters_per_document": 2079,
+      "median_ms": 66.1,
+      "samples_ms": [
+        68.5,
+        61.4,
+        66.1
+      ]
+    },
+    {
+      "documents": 5000,
+      "characters_per_document": 2079,
+      "median_ms": 352.85,
+      "samples_ms": [
+        352.85,
+        317.89,
+        356.76
+      ]
+    },
+    {
+      "documents": 10000,
+      "characters_per_document": 2079,
+      "median_ms": 647.77,
+      "samples_ms": [
+        715.55,
+        647.77,
+        609.75
+      ]
+    }
+  ],
+  "search_cap": [
+    {
+      "documents": 10001,
+      "mode": "bm25",
+      "status": 500,
+      "response": {
+        "error": {
+          "code": "internal_error",
+          "message": "Internal service error",
+          "request_id": "5e125baf-c782-49c5-a8f4-649d105fe16f"
+        }
+      }
+    },
+    {
+      "documents": 10001,
+      "mode": "dense",
+      "status": 500,
+      "response": {
+        "error": {
+          "code": "internal_error",
+          "message": "Internal service error",
+          "request_id": "00dbd558-1e2a-441e-8cfa-21242e66c393"
+        }
+      }
+    }
+  ],
+  "asgi_benchmark": [
+    {
+      "documents": 1000,
+      "concurrency": 1,
+      "requests": [
+        {
+          "status": 200,
+          "wall_ms": 218.05,
+          "items": 8
+        }
+      ],
+      "max_event_loop_lag_ms": 84.43
+    },
+    {
+      "documents": 10000,
+      "concurrency": 1,
+      "requests": [
+        {
+          "status": 200,
+          "wall_ms": 1141.95,
+          "items": 8
+        }
+      ],
+      "max_event_loop_lag_ms": 1035.73
+    },
+    {
+      "documents": 10000,
+      "concurrency": 4,
+      "requests": [
+        {
+          "status": 200,
+          "wall_ms": 4264.96,
+          "items": 8
+        },
+        {
+          "status": 200,
+          "wall_ms": 4262.82,
+          "items": 8
+        },
+        {
+          "status": 200,
+          "wall_ms": 4262.6,
+          "items": 8
+        },
+        {
+          "status": 200,
+          "wall_ms": 4263.09,
+          "items": 8
+        }
+      ],
+      "max_event_loop_lag_ms": 3420.91
+    }
+  ],
+  "structured_filter_benchmark": [
+    {
+      "filters": {
+        "model_name": "MissingModel"
+      },
+      "matching_records": 0,
+      "sql_statements": 1,
+      "wall_ms": 73.35
+    },
+    {
+      "filters": {
+        "average_bits": "3"
+      },
+      "matching_records": 1,
+      "sql_statements": 51,
+      "wall_ms": 1748.28
+    }
+  ],
+  "structured_warm_control": [
+    {
+      "filters": {
+        "model_name": "SyntheticModel"
+      },
+      "matching_returned": 10,
+      "samples_ms": [
+        39.32,
+        32.83,
+        32.5
+      ],
+      "median_ms": 32.83,
+      "sql_statements": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "filters": {
+        "average_bits": "3"
+      },
+      "matching_returned": 1,
+      "samples_ms": [
+        1657.1,
+        1584.14,
+        1568.78
+      ],
+      "median_ms": 1584.14,
+      "sql_statements": [
+        51,
+        51,
+        51
+      ]
+    }
+  ]
+}

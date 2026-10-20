@@ -1,6 +1,10 @@
 # PaperMind persistent development record
 
-## Current state — 2026-10-19
+## Current state — 2026-10-20
+
+Scaling/boundary fixes completed: complete entity-name/alias checks, column-first unit selection, token-unit budget accounting with tokenizer estimates and unknown-usage reservations, tenant/version-scoped threaded BM25 cache, bounded candidate-only SQL hydration for dense retrieval, projected paper metadata, SQL JSON expression indexes for bits/method/architecture and a fifth Alembic migration. Linux torch/torchvision are locked to the official CPU index; CUDA/NVIDIA/Triton packages removed. Added15 tests (84 total). See `docs/scaling-fixes.md`, ADR0005 and `evaluation/results/scaling-before.json` / `scaling-after.json`. Warm10k requests114ms, warm4-way218–231ms; numeric filter51→1 SQL, median1,584→60ms. First10k index build remains1.58s. These are isolated synthetic ASGI/SQLite observations, not production P95.
+
+The original GitHub run39215378166 completed successfully for unit/frontend/services, including live PostgreSQL/Redis/Celery/Qdrant. New CI also builds backend/frontend images and checks CPU-only parser imports; its outcome is recorded after push. Original local Docker failure and unverified public HTTPS/Langfuse/human benchmark are separate limits.
 
 Review hardening completed: source-derived units (including persisted-record revalidation), server-owned per-field verification, explicit audited human condition confirmation, streaming/keyset condition filtering with pagination and ready-paper scope, SQL paper scoping before Agent limits, atomic Paper/Job claim and legacy orphan recovery. Follow-up planning may refine basic queries without downgrading explicitly routed comparison/research tasks. Added11 regression cases; latest69 backend tests and2 real browser tests passed. Published public repository: https://github.com/Dianana7mi/papermind (`origin/main`, initial commit `c18f35e`). GitHub Actions unit/frontend/services jobs were dispatched; outcomes are recorded after completion. No credentials, local DBs, downloaded PDFs/models, node_modules or virtual environments were included.
 
@@ -26,7 +30,7 @@ Local runnable delivery complete: source, real model/PDF flows, tests, deploymen
 
 ## Actual checks and artifacts
 
-- `python -m pytest -q`: **69 passed**, latest saved timing in `docs/verification/backend-tests.txt`.
+- `python -m pytest -q`: **84 passed**, latest saved timing in `docs/verification/backend-tests.txt`.
 - Ruff lint/format over backend/tests/scripts/evaluation: passed. Frontend typecheck and optimized build passed (`frontend-build.txt`).
 - Playwright: **2 passed**, latest timing in `docs/verification/browser-tests.txt`: real API registration/all screens/mobile/account switching and actual AWQ comparison/PDF.js page-4 pixels.
 - Four Alembic revisions upgraded on SQLite; `alembic check` passed. PostgreSQL offline SQL regenerated; no live PostgreSQL connection is claimed.
